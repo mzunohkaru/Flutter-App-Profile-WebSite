@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_profile_web/widget/subtitle_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
@@ -12,19 +11,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'URL Launcher',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'URL Launcher'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
   final String title;
 
   @override
@@ -32,27 +29,35 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  
+  Future<void> launchInBrowser(Uri url) async {
+    if (!await launchUrl(
+      url,
+      mode: LaunchMode.externalApplication,
+      webOnlyWindowName: '_blank',
+    )) {
+      // エラーを投げる代わりに、ユーザーにエラーメッセージを表示する
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Could not launch $url')),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SubtitleText(subtitle: "ERROR"),
-            ElevatedButton(
-              onPressed: () {
-                final url = Uri.parse('https://blog.flutteruniv.com/');
-                launchUrl(url);
-              },
-              child: const Text('週刊Flutter大学を表示'),
-            ),
-          ],
-        ),
+      body: Column(
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              launchInBrowser(Uri.parse('https://flutter.dev'));
+            },
+            child: Text('Open Flutter Website'),
+          ),
+        ],
       ),
     );
   }
