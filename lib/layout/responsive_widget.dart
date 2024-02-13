@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_profile_web/pages/policys/desktop_policy_page.dart';
+import 'package:flutter_profile_web/pages/policys/mobile_policy_page.dart';
 import 'package:flutter_profile_web/utils/constants.dart';
 import 'package:sidebarx/sidebarx.dart';
 
@@ -161,13 +163,12 @@ class ScreensExampleState extends State<ScreensExample> {
             //     ? MobileProjectPage(deviceWidth)
             //     : DesktopProjectPage(deviceWidth, deviceHeight);
           case 3:
-          return Text("p");
-            // return widget.mobile
-            //     ? MobilePolicyPage(
-            //         isJP: true,
-            //         deviceWidth: deviceWidth,
-            //         deviceHeight: deviceHeight)
-            //     : DesktopPolicyPage();
+            return widget.mobile
+                ? MobilePolicyPage(
+                    isJP: true,
+                    deviceWidth: deviceWidth,
+                    deviceHeight: deviceHeight)
+                : DesktopPolicyPage();
           case 4:
           return Text("c");
             // return widget.mobile
