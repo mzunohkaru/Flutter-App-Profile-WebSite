@@ -172,9 +172,10 @@ class ScreensExampleState extends State<ScreensExample> {
                     deviceHeight: deviceHeight)
                 : const DesktopPolicyPage();
           case 4:
-            return widget.mobile
-                ? const MobileContactPage()
-                : DesktopContactPage(deviceWidth);
+          return Text("rr");
+            // return widget.mobile
+            //     ? const MobileContactPage()
+            //     : DesktopContactPage(deviceWidth);
           default:
             return SizedBox();
         }
