@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_profile_web/pages/contacts/desktop_contact_page.dart';
+import 'package:flutter_profile_web/pages/contacts/mobile_contact_page.dart';
 import 'package:flutter_profile_web/pages/policys/desktop_policy_page.dart';
 import 'package:flutter_profile_web/pages/policys/mobile_policy_page.dart';
 import 'package:flutter_profile_web/utils/constants.dart';
@@ -168,12 +170,11 @@ class ScreensExampleState extends State<ScreensExample> {
                     isJP: true,
                     deviceWidth: deviceWidth,
                     deviceHeight: deviceHeight)
-                : DesktopPolicyPage();
+                : const DesktopPolicyPage();
           case 4:
-          return Text("c");
-            // return widget.mobile
-            //     ? MobileContactPage()
-            //     : DesktopContactPage(deviceWidth);
+            return widget.mobile
+                ? const MobileContactPage()
+                : DesktopContactPage(deviceWidth);
           default:
             return SizedBox();
         }
