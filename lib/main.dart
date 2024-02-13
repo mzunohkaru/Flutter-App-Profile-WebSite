@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Builder(
         builder: (context) {
-          final isSmallScreen = MediaQuery.of(context).size.width < 1000;
+          final isSmallScreen = MediaQuery.of(context).size.width < 600;
           return Scaffold(
             key: _key,
             appBar: isSmallScreen
@@ -45,10 +45,7 @@ class MyApp extends StatelessWidget {
                         // }
                         _key.currentState?.openDrawer();
                       },
-                      icon: Icon(
-                        Icons.menu,
-                        color: Colors.white,
-                      ),
+                      icon: const Icon(Icons.menu),
                     ),
                   )
                 : null,
@@ -60,7 +57,6 @@ class MyApp extends StatelessWidget {
                   child: Center(
                     child: ScreensExample(
                       controller: _controller,
-                      mobile: isSmallScreen,
                     ),
                   ),
                 ),
