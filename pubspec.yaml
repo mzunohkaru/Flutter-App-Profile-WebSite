@@ -15,14 +15,15 @@ dependencies:
   cupertino_icons: ^1.0.2
 
 
-  # url_launcher: ^6.2.4
-  url_launcher_windows: ^3.1.1
   http:
-  
+
   simple_animations: ^5.0.2
   supercharged: ^2.1.1
 
   sidebarx: ^0.16.3
+
+  
+  url_launcher: ^6.2.4
 
 
 
