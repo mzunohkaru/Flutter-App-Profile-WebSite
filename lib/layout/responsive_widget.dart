@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_profile_web/utils/constants.dart';
 import 'package:sidebarx/sidebarx.dart';
 
 class ExampleSidebarX extends StatelessWidget {
@@ -20,7 +21,7 @@ class ExampleSidebarX extends StatelessWidget {
           color: canvasColor,
           borderRadius: BorderRadius.circular(20),
         ),
-        hoverColor: scaffoldBackgroundColor,
+        hoverColor: Colors.white,
         textStyle: TextStyle(color: Colors.white.withOpacity(0.7)),
         selectedTextStyle: const TextStyle(color: Colors.white),
         itemTextPadding: const EdgeInsets.only(left: 30),
@@ -61,109 +62,121 @@ class ExampleSidebarX extends StatelessWidget {
       ),
       footerDivider: divider,
       headerBuilder: (context, extended) {
-        return SizedBox(
+        return const SizedBox(
           height: 100,
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Image.asset('assets/app/unity_icon.png'),
-          ),
         );
       },
       items: [
-        SidebarXItem(
+        const SidebarXItem(
           icon: Icons.home,
-          label: 'Home',
-          onTap: () {
-            debugPrint('Home');
-          },
+          label: 'Products',
         ),
         const SidebarXItem(
-          icon: Icons.search,
-          label: 'Search',
+          icon: Icons.person,
+          label: 'About Me',
         ),
         const SidebarXItem(
-          icon: Icons.people,
-          label: 'People',
+          icon: Icons.folder,
+          label: 'Projects',
         ),
         const SidebarXItem(
-          icon: Icons.favorite,
-          label: 'Favorites',
+          icon: Icons.shield,
+          label: 'Policy',
         ),
         const SidebarXItem(
-          iconWidget: FlutterLogo(size: 20),
-          label: 'Flutter',
+          icon: Icons.mail,
+          label: 'Contact',
         ),
+        SidebarXItem(
+            iconWidget: SizedBox(
+                width: 20,
+                height: 20,
+                child: Image.asset('assets/app/github_icon.png')),
+            label: 'Github',
+            // onTap: GithubURL
+            ),
+        SidebarXItem(
+            iconWidget: SizedBox(
+                width: 20,
+                height: 20,
+                child: Image.asset('assets/app/apple_store_icon.png')),
+            label: 'Apple Store',
+            // onTap: storeAppleURL
+            ),
+        SidebarXItem(
+            iconWidget: SizedBox(
+                width: 20,
+                height: 20,
+                child: Image.asset(
+                  'assets/app/play_storeicon.png',
+                )),
+            label: 'Play Store',
+            // onTap: storeAndroidURL
+            ),
       ],
     );
   }
 }
 
-class ScreensExample extends StatelessWidget {
+class ScreensExample extends StatefulWidget {
   const ScreensExample({
     Key? key,
     required this.controller,
+    required this.mobile,
   }) : super(key: key);
 
   final SidebarXController controller;
+  final bool mobile;
+
+  @override
+  State<ScreensExample> createState() => ScreensExampleState();
+}
+
+class ScreensExampleState extends State<ScreensExample> {
+  late double deviceWidth, deviceHeight;
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    deviceWidth = MediaQuery.of(context).size.width;
+    deviceHeight = MediaQuery.of(context).size.height;
+  }
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return AnimatedBuilder(
-      animation: controller,
+      animation: widget.controller,
       builder: (context, child) {
-        final pageTitle = getTitleByIndex(controller.selectedIndex);
-        switch (controller.selectedIndex) {
+        switch (widget.controller.selectedIndex) {
           case 0:
-            return ListView.builder(
-              padding: const EdgeInsets.only(top: 10),
-              itemBuilder: (context, index) => Container(
-                height: 100,
-                width: double.infinity,
-                margin: const EdgeInsets.only(bottom: 10, right: 10, left: 10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Theme.of(context).canvasColor,
-                  boxShadow: const [BoxShadow()],
-                ),
-              ),
-            );
+          return Text("home");
+            // return widget.mobile
+                // ? MobileProductPage(deviceWidth, deviceHeight)
+                // : DesktopProductPage(deviceWidth, deviceHeight);
+          case 1:
+          return Text("about");
+            // return widget.mobile ? MobileAboutmePage() : DesktopAboutmePage(deviceWidth, deviceHeight);
+          case 2:
+          return Text("rr");
+            // return widget.mobile
+            //     ? MobileProjectPage(deviceWidth)
+            //     : DesktopProjectPage(deviceWidth, deviceHeight);
+          case 3:
+          return Text("p");
+            // return widget.mobile
+            //     ? MobilePolicyPage(
+            //         isJP: true,
+            //         deviceWidth: deviceWidth,
+            //         deviceHeight: deviceHeight)
+            //     : DesktopPolicyPage();
+          case 4:
+          return Text("c");
+            // return widget.mobile
+            //     ? MobileContactPage()
+            //     : DesktopContactPage(deviceWidth);
           default:
-            return Text(
-              pageTitle,
-              style: theme.textTheme.headlineSmall,
-            );
+            return SizedBox();
         }
       },
     );
   }
 }
-
-String getTitleByIndex(int index) {
-  switch (index) {
-    case 0:
-      return 'Home';
-    case 1:
-      return 'Search';
-    case 2:
-      return 'People';
-    case 3:
-      return 'Favorites';
-    case 4:
-      return 'Custom iconWidget';
-    case 5:
-      return 'Profile';
-    case 6:
-      return 'Settings';
-    default:
-      return 'Not found page';
-  }
-}
-
-const primaryColor = Color(0xFF685BFF);
-const canvasColor = Color(0xFF2E2E48);
-const scaffoldBackgroundColor = Color(0xFF464667);
-const accentCanvasColor = Color(0xFF3E3E61);
-const white = Colors.white;
-final actionColor = const Color(0xFF5F5FA7).withOpacity(0.6);
-final divider = Divider(color: white.withOpacity(0.3), height: 1);

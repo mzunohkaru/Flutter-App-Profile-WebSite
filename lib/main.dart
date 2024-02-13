@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_web/layout/responsive_widget.dart';
+import 'package:flutter_profile_web/utils/constants.dart';
 import 'package:sidebarx/sidebarx.dart';
 
 void main() {
@@ -31,13 +32,12 @@ class MyApp extends StatelessWidget {
       ),
       home: Builder(
         builder: (context) {
-          final isSmallScreen = MediaQuery.of(context).size.width < 600;
+          final isSmallScreen = MediaQuery.of(context).size.width < 1000;
           return Scaffold(
             key: _key,
             appBar: isSmallScreen
                 ? AppBar(
                     backgroundColor: canvasColor,
-                    title: Text(getTitleByIndex(_controller.selectedIndex)),
                     leading: IconButton(
                       onPressed: () {
                         // if (!Platform.isAndroid && !Platform.isIOS) {
@@ -45,7 +45,10 @@ class MyApp extends StatelessWidget {
                         // }
                         _key.currentState?.openDrawer();
                       },
-                      icon: const Icon(Icons.menu),
+                      icon: Icon(
+                        Icons.menu,
+                        color: Colors.white,
+                      ),
                     ),
                   )
                 : null,
@@ -57,6 +60,7 @@ class MyApp extends StatelessWidget {
                   child: Center(
                     child: ScreensExample(
                       controller: _controller,
+                      mobile: isSmallScreen,
                     ),
                   ),
                 ),
