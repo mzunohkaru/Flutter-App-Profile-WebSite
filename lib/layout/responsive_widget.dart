@@ -162,9 +162,10 @@ class _SideMenuBodyWidgetState extends State<SideMenuBodyWidget> {
           case 1:
             return DesktopPolicyPage();
           case 2:
-            return widget.mobile
-                ? MobileProjectPage(deviceWidth)
-                : DesktopProjectPage(deviceWidth, deviceHeight);
+          return DesktopPolicyPage();
+            // return widget.mobile
+            //     ? MobileProjectPage(deviceWidth)
+            //     : DesktopProjectPage(deviceWidth, deviceHeight);
           case 3:
             return widget.mobile
                 ? MobilePolicyPage(
@@ -173,7 +174,7 @@ class _SideMenuBodyWidgetState extends State<SideMenuBodyWidget> {
                     deviceHeight: deviceHeight)
                 : const DesktopPolicyPage();
           case 4:
-          return Text("home");
+          return DesktopPolicyPage();
             // return widget.mobile
             //     ? const MobileContactPage()
             //     : DesktopContactPage(deviceWidth);
