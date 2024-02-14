@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_web/pages/policys/desktop_policy_page.dart';
+import 'package:flutter_profile_web/pages/policys/mobile_policy_page.dart';
 import 'package:flutter_profile_web/utils/constants.dart';
 import 'package:sidebarx/sidebarx.dart';
 
@@ -22,7 +23,7 @@ class ExampleSidebarX extends StatelessWidget {
           color: canvasColor,
           borderRadius: BorderRadius.circular(20),
         ),
-        hoverColor: scaffoldBackgroundColor,
+        hoverColor: Colors.white,
         textStyle: TextStyle(color: Colors.white.withOpacity(0.7)),
         selectedTextStyle: const TextStyle(color: Colors.white),
         itemTextPadding: const EdgeInsets.only(left: 30),
@@ -63,12 +64,8 @@ class ExampleSidebarX extends StatelessWidget {
       ),
       footerDivider: divider,
       headerBuilder: (context, extended) {
-        return SizedBox(
+        return const SizedBox(
           height: 100,
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Image.asset('assets/app/unity_icon.png'),
-          ),
         );
       },
       items: [
@@ -123,20 +120,35 @@ class ExampleSidebarX extends StatelessWidget {
   }
 }
 
-class ScreensExample extends StatelessWidget {
+class ScreensExample extends StatefulWidget {
   const ScreensExample({
     Key? key,
     required this.controller,
+    required this.mobile,
   }) : super(key: key);
 
   final SidebarXController controller;
+  final bool mobile;
+
+  @override
+  State<ScreensExample> createState() => _ScreensExampleState();
+}
+
+class _ScreensExampleState extends State<ScreensExample> {
+  late double deviceWidth, deviceHeight;
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    deviceWidth = MediaQuery.of(context).size.width;
+    deviceHeight = MediaQuery.of(context).size.height;
+  }
 
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-      animation: controller,
+      animation: widget.controller,
       builder: (context, child) {
-        switch (controller.selectedIndex) {
+        switch (widget.controller.selectedIndex) {
           case 0:
             return DesktopPolicyPage();
           case 1:
@@ -144,7 +156,12 @@ class ScreensExample extends StatelessWidget {
           case 2:
             return DesktopPolicyPage();
           case 3:
-            return Text('Home');
+            return widget.mobile
+                ? MobilePolicyPage(
+                    isJP: true,
+                    deviceWidth: deviceWidth,
+                    deviceHeight: deviceHeight)
+                : DesktopPolicyPage();
           case 4:
             return Text('Home');
           default:

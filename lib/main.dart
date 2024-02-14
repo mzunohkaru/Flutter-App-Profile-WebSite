@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_profile_web/layout/responsive_widget.dart';
 import 'package:flutter_profile_web/utils/constants.dart';
 import 'package:sidebarx/sidebarx.dart';
 
-void main() {
+void main() async {
+  // WidgetsFlutterBinding.ensureInitialized();
+  // // 向き指定
+  // SystemChrome.setPreferredOrientations([
+  //   DeviceOrientation.portraitUp, //縦固定
+  // ]);
+
   runApp(MyApp());
 }
 
@@ -16,9 +23,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'SidebarX Example',
+      title: 'ポートフォリオ',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        // brightness: Brightness.dark,
         primaryColor: primaryColor,
         canvasColor: canvasColor,
         scaffoldBackgroundColor: scaffoldBackgroundColor,
@@ -57,6 +65,7 @@ class MyApp extends StatelessWidget {
                   child: Center(
                     child: ScreensExample(
                       controller: _controller,
+                      mobile: isSmallScreen,
                     ),
                   ),
                 ),
