@@ -179,9 +179,7 @@ class _SideMenuBodyWidgetState extends State<SideMenuBodyWidget> {
             //     ? const MobileContactPage()
             //     : DesktopContactPage(deviceWidth);
           default:
-            return widget.mobile
-                ? MobileProductPage(deviceWidth, deviceHeight)
-                : DesktopProductPage(deviceWidth, deviceHeight);
+            return SizedBox();
         }
       },
     );
