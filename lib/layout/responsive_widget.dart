@@ -138,7 +138,9 @@ class SideMenuBodyWidget extends StatefulWidget {
 }
 
 class _SideMenuBodyWidgetState extends State<SideMenuBodyWidget> {
+  
   late double deviceWidth, deviceHeight;
+
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -171,7 +173,7 @@ class _SideMenuBodyWidgetState extends State<SideMenuBodyWidget> {
                     deviceHeight: deviceHeight)
                 : const DesktopPolicyPage();
           case 4:
-          return const MobileContactPage();
+          return const SizedBox();
             // return widget.mobile
             //     ? const MobileContactPage()
             //     : DesktopContactPage(deviceWidth);
