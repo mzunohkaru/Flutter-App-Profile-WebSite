@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_profile_web/pages/policys/desktop_policy_page.dart';
 import 'package:flutter_profile_web/utils/constants.dart';
 import 'package:sidebarx/sidebarx.dart';
 
@@ -71,28 +72,51 @@ class ExampleSidebarX extends StatelessWidget {
         );
       },
       items: [
-        SidebarXItem(
+        const SidebarXItem(
           icon: Icons.home,
-          label: 'Home',
-          onTap: () {
-            debugPrint('Home');
-          },
+          label: 'Products',
         ),
         const SidebarXItem(
-          icon: Icons.search,
-          label: 'Search',
+          icon: Icons.person,
+          label: 'About Me',
         ),
         const SidebarXItem(
-          icon: Icons.people,
-          label: 'People',
+          icon: Icons.folder,
+          label: 'Projects',
         ),
         const SidebarXItem(
-          icon: Icons.favorite,
-          label: 'Favorites',
+          icon: Icons.shield,
+          label: 'Policy',
         ),
         const SidebarXItem(
-          iconWidget: FlutterLogo(size: 20),
-          label: 'Flutter',
+          icon: Icons.mail,
+          label: 'Contact',
+        ),
+        SidebarXItem(
+          iconWidget: SizedBox(
+              width: 20,
+              height: 20,
+              child: Image.asset('assets/app/github_icon.png')),
+          label: 'Github',
+          // onTap: GithubURL
+        ),
+        SidebarXItem(
+          iconWidget: SizedBox(
+              width: 20,
+              height: 20,
+              child: Image.asset('assets/app/apple_store_icon.png')),
+          label: 'Apple Store',
+          // onTap: storeAppleURL
+        ),
+        SidebarXItem(
+          iconWidget: SizedBox(
+              width: 20,
+              height: 20,
+              child: Image.asset(
+                'assets/app/play_storeicon.png',
+              )),
+          label: 'Play Store',
+          // onTap: storeAndroidURL
         ),
       ],
     );
@@ -114,11 +138,11 @@ class ScreensExample extends StatelessWidget {
       builder: (context, child) {
         switch (controller.selectedIndex) {
           case 0:
-            return Text('Home');
+            return DesktopPolicyPage();
           case 1:
-            return Text('Home');
+            return DesktopPolicyPage();
           case 2:
-            return Text('Home');
+            return DesktopPolicyPage();
           case 3:
             return Text('Home');
           case 4:
