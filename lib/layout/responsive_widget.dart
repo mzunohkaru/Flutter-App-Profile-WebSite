@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_web/pages/policys/desktop_policy_page.dart';
 import 'package:flutter_profile_web/pages/policys/mobile_policy_page.dart';
+import 'package:flutter_profile_web/pages/products/desktop_products_page.dart';
+import 'package:flutter_profile_web/pages/products/mobile_products_page.dart';
 import 'package:flutter_profile_web/utils/constants.dart';
 import 'package:sidebarx/sidebarx.dart';
 
@@ -150,7 +152,9 @@ class _SideMenuBodyWidgetState extends State<SideMenuBodyWidget> {
       builder: (context, child) {
         switch (widget.controller.selectedIndex) {
           case 0:
-            return DesktopPolicyPage();
+            return widget.mobile
+                ? MobileProductPage(deviceWidth, deviceHeight)
+                : DesktopProductPage(deviceWidth, deviceHeight);
           case 1:
             return DesktopPolicyPage();
           case 2:
