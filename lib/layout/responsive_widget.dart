@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_profile_web/pages/contacts/desktop_contact_page.dart';
+import 'package:flutter_profile_web/pages/contacts/mobile_contact_page.dart';
 import 'package:flutter_profile_web/pages/policys/desktop_policy_page.dart';
 import 'package:flutter_profile_web/pages/policys/mobile_policy_page.dart';
 import 'package:flutter_profile_web/pages/products/desktop_products_page.dart';
@@ -165,11 +167,15 @@ class _SideMenuBodyWidgetState extends State<SideMenuBodyWidget> {
                     isJP: true,
                     deviceWidth: deviceWidth,
                     deviceHeight: deviceHeight)
-                : DesktopPolicyPage();
+                : const DesktopPolicyPage();
           case 4:
-            return Text('Home');
+            return widget.mobile
+                ? const MobileContactPage()
+                : DesktopContactPage(deviceWidth);
           default:
-            return Text('Home');
+            return widget.mobile
+                ? MobileProductPage(deviceWidth, deviceHeight)
+                : DesktopProductPage(deviceWidth, deviceHeight);
         }
       },
     );
