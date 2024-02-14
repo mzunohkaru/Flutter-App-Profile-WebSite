@@ -53,17 +53,17 @@ class MyApp extends StatelessWidget {
                         // }
                         _key.currentState?.openDrawer();
                       },
-                      icon: const Icon(Icons.menu),
+                      icon: const Icon(Icons.menu, color: Colors.white,),
                     ),
                   )
                 : null,
-            drawer: ExampleSidebarX(controller: _controller),
+            drawer: SideMenuWidget(controller: _controller),
             body: Row(
               children: [
-                if (!isSmallScreen) ExampleSidebarX(controller: _controller),
+                if (!isSmallScreen) SideMenuWidget(controller: _controller),
                 Expanded(
                   child: Center(
-                    child: ScreensExample(
+                    child: SideMenuBodyWidget(
                       controller: _controller,
                       mobile: isSmallScreen,
                     ),

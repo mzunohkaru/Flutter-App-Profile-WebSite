@@ -4,8 +4,8 @@ import 'package:flutter_profile_web/pages/policys/mobile_policy_page.dart';
 import 'package:flutter_profile_web/utils/constants.dart';
 import 'package:sidebarx/sidebarx.dart';
 
-class ExampleSidebarX extends StatelessWidget {
-  const ExampleSidebarX({
+class SideMenuWidget extends StatelessWidget {
+  const SideMenuWidget({
     Key? key,
     required SidebarXController controller,
   })  : _controller = controller,
@@ -120,8 +120,8 @@ class ExampleSidebarX extends StatelessWidget {
   }
 }
 
-class ScreensExample extends StatefulWidget {
-  const ScreensExample({
+class SideMenuBodyWidget extends StatefulWidget {
+  const SideMenuBodyWidget({
     Key? key,
     required this.controller,
     required this.mobile,
@@ -131,10 +131,10 @@ class ScreensExample extends StatefulWidget {
   final bool mobile;
 
   @override
-  State<ScreensExample> createState() => _ScreensExampleState();
+  State<SideMenuBodyWidget> createState() => _SideMenuBodyWidgetState();
 }
 
-class _ScreensExampleState extends State<ScreensExample> {
+class _SideMenuBodyWidgetState extends State<SideMenuBodyWidget> {
   late double deviceWidth, deviceHeight;
   @override
   void didChangeDependencies() {
