@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_profile_web/pages/contacts/mobile_contact_page.dart';
 import 'package:flutter_profile_web/pages/policys/desktop_policy_page.dart';
 import 'package:flutter_profile_web/pages/policys/mobile_policy_page.dart';
 import 'package:flutter_profile_web/pages/products/desktop_products_page.dart';
@@ -162,9 +161,6 @@ class _SideMenuBodyWidgetState extends State<SideMenuBodyWidget> {
             return const DesktopPolicyPage();
           case 2:
           return const DesktopPolicyPage();
-            // return widget.mobile
-            //     ? MobileProjectPage(deviceWidth)
-            //     : DesktopProjectPage(deviceWidth, deviceHeight);
           case 3:
             return widget.mobile
                 ? MobilePolicyPage(
@@ -173,10 +169,7 @@ class _SideMenuBodyWidgetState extends State<SideMenuBodyWidget> {
                     deviceHeight: deviceHeight)
                 : const DesktopPolicyPage();
           case 4:
-          return const SizedBox();
-            // return widget.mobile
-            //     ? const MobileContactPage()
-            //     : DesktopContactPage(deviceWidth);
+          return const DesktopPolicyPage();
           default:
             return const SizedBox();
         }
