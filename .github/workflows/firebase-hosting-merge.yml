@@ -12,10 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: subosito/flutter-action@v1
-        with:
-          flutter-version: '3.16.9' # ここに使用しているFlutterのバージョンを指定
-
+      
       # -- ここから追記部分！ -- #
       # Flutter のインストール clone がはやい
       - name: Install Flutter
