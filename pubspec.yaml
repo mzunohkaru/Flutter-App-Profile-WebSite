@@ -16,13 +16,13 @@ dependencies:
 
 
 
-  # url_launcher:
+  url_launcher: ^6.1.9
   http:
 
   simple_animations: ^5.0.2
   supercharged: ^2.1.1
 
-  sidebarx: ^0.16.0
+  sidebarx: ^0.16.3
 
 
 
