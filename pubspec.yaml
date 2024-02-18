@@ -16,7 +16,7 @@ dependencies:
 
 
 
-  url_launcher: ^6.1.9
+  url_launcher: ^6.1.6
   http:
 
   simple_animations: ^5.0.2
