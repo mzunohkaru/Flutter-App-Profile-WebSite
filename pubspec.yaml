@@ -16,7 +16,7 @@ dependencies:
 
 
 
-  url_launcher:
+  # url_launcher:
   http:
 
   simple_animations: ^5.0.2
