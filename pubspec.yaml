@@ -14,17 +14,19 @@ dependencies:
 
   cupertino_icons: ^1.0.2
 
-
-
-
+  # Network
   url_launcher: ^6.2.5
   http:
 
+  # UI
   simple_animations: ^5.0.2
   supercharged: ^2.1.1
-
   sidebarx: ^0.16.3
 
+  youtube_player_iframe: ^4.0.4
+
+
+  flutter_hooks:
 
 
 

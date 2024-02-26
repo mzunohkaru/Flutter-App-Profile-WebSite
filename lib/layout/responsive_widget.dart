@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_profile_web/pages/contacts/desktop_contact_page.dart';
+import 'package:flutter_profile_web/pages/contacts/mobile_contact_page.dart';
 import 'package:flutter_profile_web/pages/policys/desktop_policy_page.dart';
 import 'package:flutter_profile_web/pages/policys/mobile_policy_page.dart';
 import 'package:flutter_profile_web/pages/products/desktop_products_page.dart';
 import 'package:flutter_profile_web/pages/products/mobile_products_page.dart';
+import 'package:flutter_profile_web/pages/projects/desktop_projects_page.dart';
+import 'package:flutter_profile_web/pages/projects/mobile_projects_page.dart';
+import 'package:flutter_profile_web/pages/swift_projects/desktop_swift_projects_page.dart';
+import 'package:flutter_profile_web/utils/app_url.dart';
 import 'package:flutter_profile_web/utils/constants.dart';
 import 'package:sidebarx/sidebarx.dart';
 
@@ -97,7 +103,7 @@ class SideMenuWidget extends StatelessWidget {
               height: 20,
               child: Image.asset('assets/app/github_icon.png')),
           label: 'Github',
-          // onTap: GithubURL
+          onTap: GithubURL
         ),
         SidebarXItem(
           iconWidget: SizedBox(
@@ -105,7 +111,7 @@ class SideMenuWidget extends StatelessWidget {
               height: 20,
               child: Image.asset('assets/app/apple_store_icon.png')),
           label: 'Apple Store',
-          // onTap: storeAppleURL
+          onTap: storeAppleURL
         ),
         SidebarXItem(
           iconWidget: SizedBox(
@@ -115,7 +121,7 @@ class SideMenuWidget extends StatelessWidget {
                 'assets/app/play_storeicon.png',
               )),
           label: 'Play Store',
-          // onTap: storeAndroidURL
+          onTap: storeAndroidURL
         ),
       ],
     );
@@ -137,7 +143,6 @@ class SideMenuBodyWidget extends StatefulWidget {
 }
 
 class _SideMenuBodyWidgetState extends State<SideMenuBodyWidget> {
-  
   late double deviceWidth, deviceHeight;
 
   @override
@@ -155,12 +160,17 @@ class _SideMenuBodyWidgetState extends State<SideMenuBodyWidget> {
         switch (widget.controller.selectedIndex) {
           case 0:
             return widget.mobile
-                ? MobileProductPage(deviceWidth, deviceHeight)
-                : DesktopProductPage(deviceWidth, deviceHeight);
+                ? MobileProductPage(
+                    deviceWidth: deviceWidth,
+                    deviceHeight: deviceHeight,
+                  )
+                : DesktopProductPage(deviceWidth: deviceWidth, deviceHeight: deviceHeight);
           case 1:
-            return const DesktopPolicyPage();
+            return const DesktopSwiftProjectsPage();
           case 2:
-          return const DesktopPolicyPage();
+            return widget.mobile
+                ? MobileProjectPage(deviceWidth: deviceWidth)
+                :  DesktopProjectPage(deviceHeight: deviceHeight);
           case 3:
             return widget.mobile
                 ? MobilePolicyPage(
@@ -169,7 +179,9 @@ class _SideMenuBodyWidgetState extends State<SideMenuBodyWidget> {
                     deviceHeight: deviceHeight)
                 : const DesktopPolicyPage();
           case 4:
-          return const DesktopPolicyPage();
+            return widget.mobile
+                ? const MobileContactPage()
+                : DesktopContactPage(deviceWidth: deviceWidth);
           default:
             return const SizedBox();
         }

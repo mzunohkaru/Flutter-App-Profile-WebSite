@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_profile_web/utils/app_url.dart';
 
 import 'package:flutter_profile_web/widget/subtitle_widget.dart';
 
 class MobileProductPage extends StatefulWidget {
-  MobileProductPage(this.width, this.height, {super.key});
+  final double deviceWidth;
+  final double deviceHeight;
 
-  double width, height;
+  const MobileProductPage(
+      {super.key, required this.deviceWidth, required this.deviceHeight});
   @override
   State<MobileProductPage> createState() => _MobileProductPageState();
 }
@@ -25,7 +28,7 @@ class _MobileProductPageState extends State<MobileProductPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SubtitleText(subtitle: "Products"),
+              const SubtitleText(subtitle: "Products"),
               const SizedBox(
                 height: 30,
               ),
@@ -33,7 +36,7 @@ class _MobileProductPageState extends State<MobileProductPage> {
                 alignment: Alignment.bottomCenter,
                 children: [
                   Container(
-                    width: widget.width / 1.2,
+                    width: widget.deviceWidth / 1.2,
                     child: Image.asset(
                       "assets/app/images/ui5.png",
                     ),
@@ -44,7 +47,7 @@ class _MobileProductPageState extends State<MobileProductPage> {
                       color: Colors.white.withOpacity(0.5),
                       elevation: 36,
                       child: Container(
-                        width: widget.width / 1.6,
+                        width: widget.deviceWidth / 1.6,
                         height: 200,
                         margin: const EdgeInsets.all(10.0),
                         child: Column(
@@ -68,15 +71,15 @@ class _MobileProductPageState extends State<MobileProductPage> {
                   ),
                 ],
               ),
-              // buildStoreButton("assets/app/apple_store.png", escTerausaIOSURL),
-              // buildStoreButton(
-              //     "assets/app/play_store.png", escTerausaAndroidURL),
+              buildStoreButton("assets/app/apple_store.png", escTerausaIOSURL),
+              buildStoreButton(
+                  "assets/app/play_store.png", escTerausaAndroidURL),
               buildDivider(),
               Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
                   Container(
-                    width: widget.width / 1.2,
+                    width: widget.deviceWidth / 1.2,
                     child: Image.asset(
                       "assets/app/images/ui6.png",
                     ),
@@ -87,7 +90,7 @@ class _MobileProductPageState extends State<MobileProductPage> {
                       color: Colors.white.withOpacity(0.5),
                       elevation: 36,
                       child: Container(
-                        width: widget.width / 1.6,
+                        width: widget.deviceWidth / 1.6,
                         height: 200,
                         margin: const EdgeInsets.all(10.0),
                         child: Column(
@@ -113,13 +116,13 @@ class _MobileProductPageState extends State<MobileProductPage> {
                   ),
                 ],
               ),
-              // buildStoreButton("assets/app/apple_store.png", escAburayaIOSURL),
+              buildStoreButton("assets/app/apple_store.png", escAburayaIOSURL),
               buildDivider(),
               Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
                   Container(
-                    width: widget.width / 1.2,
+                    width: widget.deviceWidth / 1.2,
                     child: Image.asset(
                       "assets/app/images/ui7.png",
                     ),
@@ -130,7 +133,7 @@ class _MobileProductPageState extends State<MobileProductPage> {
                       color: Colors.white.withOpacity(0.5),
                       elevation: 36,
                       child: Container(
-                        width: widget.width / 1.6,
+                        width: widget.deviceWidth / 1.6,
                         height: 200,
                         margin: const EdgeInsets.all(10.0),
                         child: Column(
@@ -155,16 +158,16 @@ class _MobileProductPageState extends State<MobileProductPage> {
                   ),
                 ],
               ),
-              // buildStoreButton(
-              //     "assets/app/apple_store.png", escTabidachiIOSURL),
-              // buildStoreButton(
-              //     "assets/app/play_store.png", escTabidachiAndroidURL),
+              buildStoreButton(
+                  "assets/app/apple_store.png", escTabidachiIOSURL),
+              buildStoreButton(
+                  "assets/app/play_store.png", escTabidachiAndroidURL),
               buildDivider(),
               Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
                   Container(
-                    width: widget.width / 1.2,
+                    width: widget.deviceWidth / 1.2,
                     child: Image.asset(
                       "assets/app/images/ui8.png",
                     ),
@@ -175,7 +178,7 @@ class _MobileProductPageState extends State<MobileProductPage> {
                       color: Colors.white.withOpacity(0.5),
                       elevation: 36,
                       child: Container(
-                        width: widget.width / 1.6,
+                        width: widget.deviceWidth / 1.6,
                         height: 200,
                         margin: const EdgeInsets.all(10.0),
                         child: Column(
@@ -201,13 +204,13 @@ class _MobileProductPageState extends State<MobileProductPage> {
                   ),
                 ],
               ),
-              // buildStoreButton("assets/app/apple_store.png", escFairyIOSURL),
+              buildStoreButton("assets/app/apple_store.png", escFairyIOSURL),
               buildDivider(),
               Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
                   Container(
-                    width: widget.width / 1.2,
+                    width: widget.deviceWidth / 1.2,
                     child: Image.asset(
                       "assets/app/images/ui9.png",
                     ),
@@ -218,7 +221,7 @@ class _MobileProductPageState extends State<MobileProductPage> {
                       color: Colors.white.withOpacity(0.5),
                       elevation: 36,
                       child: Container(
-                        width: widget.width / 1.6,
+                        width: widget.deviceWidth / 1.6,
                         height: 120,
                         margin: const EdgeInsets.all(10.0),
                         child: Column(
@@ -242,9 +245,9 @@ class _MobileProductPageState extends State<MobileProductPage> {
                   ),
                 ],
               ),
-              // buildStoreButton("assets/app/apple_store.png", escTanabataIOSURL),
-              // buildStoreButton(
-              //     "assets/app/play_store.png", escTanabataAndroidURL),
+              buildStoreButton("assets/app/apple_store.png", escTanabataIOSURL),
+              buildStoreButton(
+                  "assets/app/play_store.png", escTanabataAndroidURL),
               const SizedBox(
                 height: 80,
               )
@@ -262,7 +265,7 @@ class _MobileProductPageState extends State<MobileProductPage> {
         onPressed();
       },
       child: Container(
-        width: widget.width / 2.7,
+        width: widget.deviceWidth / 2.7,
         margin: const EdgeInsets.all(10.0),
         child: Center(
           child: Image.asset(
@@ -275,7 +278,7 @@ class _MobileProductPageState extends State<MobileProductPage> {
   }
 
   Divider buildDivider() {
-    return Divider(
+    return const Divider(
       color: Colors.black45,
       thickness: 0.5,
       height: 50,

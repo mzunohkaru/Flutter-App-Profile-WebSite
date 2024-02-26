@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_profile_web/utils/app_url.dart';
 import 'package:flutter_profile_web/widget/subtitle_widget.dart';
 
 
 class DesktopProductPage extends StatefulWidget {
-  DesktopProductPage(this.width, this.height, {super.key});
+  final double deviceWidth;
+  final double deviceHeight;
 
-  double width;
-  double height;
+  const DesktopProductPage({super.key, required this.deviceWidth, required this.deviceHeight});
   @override
   State<DesktopProductPage> createState() => _DesktopProductPageState();
 }
@@ -36,7 +37,7 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
                     alignment: Alignment.bottomCenter,
                     children: [
                       Container(
-                        height: widget.height / 1.2,
+                        height: widget.deviceHeight / 1.2,
                         child: Image.asset(
                           "assets/app/images/ui5.png",
                         ),
@@ -47,7 +48,7 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
                     width: 30,
                   ),
                   Container(
-                    width: widget.width / 2.5,
+                    width: widget.deviceWidth / 2.5,
                     child: Column(
                       children: [
                         Text("脱出ゲーム 寺うさ", style: titleStyle),
@@ -61,13 +62,13 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
                         const SizedBox(
                           height: 60,
                         ),
-                        // buildStoreButton(
-                        //     "assets/app/apple_store.png", escTerausaIOSURL),
+                        buildStoreButton(
+                            "assets/app/apple_store.png", escTerausaIOSURL),
                         const SizedBox(
                           height: 12,
                         ),
-                        // buildStoreButton(
-                        //     "assets/app/play_store.png", escTerausaAndroidURL),
+                        buildStoreButton(
+                            "assets/app/play_store.png", escTerausaAndroidURL),
                       ],
                     ),
                   ),
@@ -77,7 +78,7 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   SizedBox(
-                    width: widget.width / 2.5,
+                    width: widget.deviceWidth / 2.5,
                     child: Column(
                       children: [
                         Text("脱出ゲーム あぶら屋", style: titleStyle),
@@ -91,8 +92,8 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
                         const SizedBox(
                           height: 60,
                         ),
-                        // buildStoreButton(
-                        //     "assets/app/apple_store.png", escAburayaIOSURL),
+                        buildStoreButton(
+                            "assets/app/apple_store.png", escAburayaIOSURL),
                       ],
                     ),
                   ),
@@ -103,7 +104,7 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
                     alignment: Alignment.bottomCenter,
                     children: [
                       SizedBox(
-                        height: widget.height / 1.2,
+                        height: widget.deviceHeight / 1.2,
                         child: Image.asset(
                           "assets/app/images/ui6.png",
                         ),
@@ -118,7 +119,7 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
                     alignment: Alignment.bottomCenter,
                     children: [
                       SizedBox(
-                        height: widget.height / 1.2,
+                        height: widget.deviceHeight / 1.2,
                         child: Image.asset(
                           "assets/app/images/ui7.png",
                         ),
@@ -129,7 +130,7 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
                     width: 30,
                   ),
                   SizedBox(
-                    width: widget.width / 2.5,
+                    width: widget.deviceWidth / 2.5,
                     child: Column(
                       children: [
                         Text("脱出ゲーム 旅立ち", style: titleStyle),
@@ -143,13 +144,13 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
                         const SizedBox(
                           height: 60,
                         ),
-                        // buildStoreButton(
-                        //     "assets/app/apple_store.png", escTabidachiIOSURL),
+                        buildStoreButton(
+                            "assets/app/apple_store.png", escTabidachiIOSURL),
                         const SizedBox(
                           height: 12,
                         ),
-                        // buildStoreButton(
-                        //     "assets/app/play_store.png", escTabidachiAndroidURL),
+                        buildStoreButton(
+                            "assets/app/play_store.png", escTabidachiAndroidURL),
                       ],
                     ),
                   ),
@@ -159,7 +160,7 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   SizedBox(
-                    width: widget.width / 2.5,
+                    width: widget.deviceWidth / 2.5,
                     child: Column(
                       children: [
                         Text("脱出ゲーム 異世界召喚", style: titleStyle),
@@ -173,13 +174,13 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
                         const SizedBox(
                           height: 60,
                         ),
-                        // buildStoreButton(
-                        //     "assets/app/apple_store.png", escFairyIOSURL),
+                        buildStoreButton(
+                            "assets/app/apple_store.png", escFairyIOSURL),
                         const SizedBox(
                           height: 12,
                         ),
-                        // buildStoreButton(
-                        //     "assets/app/play_store.png", escTanabataAndroidURL),
+                        buildStoreButton(
+                            "assets/app/play_store.png", escTanabataAndroidURL),
                       ],
                     ),
                   ),
@@ -190,7 +191,7 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
                     alignment: Alignment.bottomCenter,
                     children: [
                       SizedBox(
-                        height: widget.height / 1.2,
+                        height: widget.deviceHeight / 1.2,
                         child: Image.asset(
                           "assets/app/images/ui8.png",
                         ),
@@ -205,7 +206,7 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
                     alignment: Alignment.bottomCenter,
                     children: [
                       SizedBox(
-                        height: widget.height / 1.2,
+                        height: widget.deviceHeight / 1.2,
                         child: Image.asset(
                           "assets/app/images/ui9.png",
                         ),
@@ -216,7 +217,7 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
                     width: 30,
                   ),
                   SizedBox(
-                    width: widget.width / 2.5,
+                    width: widget.deviceWidth / 2.5,
                     child: Column(
                       children: [
                         Text("脱出ゲーム 七夕の昔話", style: titleStyle),
@@ -230,13 +231,13 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
                         const SizedBox(
                           height: 60,
                         ),
-                        // buildStoreButton(
-                        //     "assets/app/apple_store.png", escTanabataIOSURL),
+                        buildStoreButton(
+                            "assets/app/apple_store.png", escTanabataIOSURL),
                         const SizedBox(
                           height: 12,
                         ),
-                        // buildStoreButton(
-                        //     "assets/app/play_store.png", escTanabataAndroidURL),
+                        buildStoreButton(
+                            "assets/app/play_store.png", escTanabataAndroidURL),
                       ],
                     ),
                   ),
@@ -262,7 +263,7 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
-              height: widget.height / 1.2,
+              height: widget.deviceHeight / 1.2,
               child: Image.asset(
                 image,
               ),
