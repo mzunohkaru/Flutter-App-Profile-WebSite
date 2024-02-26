@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_profile_web/layout/responsive_widget.dart';
 import 'package:flutter_profile_web/utils/constants.dart';
 import 'package:sidebarx/sidebarx.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
