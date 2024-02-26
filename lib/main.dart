@@ -6,11 +6,11 @@ import 'package:sidebarx/sidebarx.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() async {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // // 向き指定
-  // SystemChrome.setPreferredOrientations([
-  //   DeviceOrientation.portraitUp, //縦固定
-  // ]);
+  WidgetsFlutterBinding.ensureInitialized();
+  // 向き指定
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp, //縦固定
+  ]);
 
   runApp(MyApp());
 }
