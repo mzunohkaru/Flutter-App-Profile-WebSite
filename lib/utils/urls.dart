@@ -8,7 +8,7 @@ Uri github_flutter_instagram =
     Uri.parse("https://github.com/mzunohkaru/Flutter-Sample-Instagram");
 // Flutter Translation
 Uri github_flutter_translation =
-    Uri.parse('https://github.com/runhikaru/AI-Translation-App');
+    Uri.parse('https://github.com/mzunohkaru/Flutter-App-Translation');
 // Flutter Food
 Uri github_flutter_food = Uri.parse('https://github.com/runhikaru/Food-UI-Demo');
 // Flutter Memo

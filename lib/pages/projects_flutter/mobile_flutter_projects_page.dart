@@ -105,12 +105,18 @@ class MobileFlutterProjectsPage extends HookWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                const Text("AI 翻訳アプリ", style: kMobileTitleTextStyle,),
+                const Text(
+                  "AI 翻訳アプリ",
+                  style: kMobileTitleTextStyle,
+                ),
                 const Spacer(),
-                SizedBox(
-                  width: 45,
-                  height: 45,
-                  child: Image.asset("assets/utils/apple_store_icon.png"),
+                InkWell(
+                  onTap: Apple_Translate_AppURL,
+                  child: SizedBox(
+                    width: 45,
+                    height: 45,
+                    child: Image.asset("assets/utils/apple_store_icon.png"),
+                  ),
                 ),
                 const IconButton(
                   onPressed: Github_Flutter_TranslationURL,
@@ -133,7 +139,10 @@ class MobileFlutterProjectsPage extends HookWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text("デリバリーアプリ", style: kMobileTitleTextStyle,),
+                Text(
+                  "デリバリーアプリ",
+                  style: kMobileTitleTextStyle,
+                ),
                 Spacer(),
                 IconButton(
                   onPressed: Github_Flutter_FoodURL,
