@@ -22,11 +22,12 @@ dependencies:
   simple_animations: ^5.0.2
   supercharged: ^2.1.1
   sidebarx: ^0.16.3
+  font_awesome_flutter:
 
-  youtube_player_iframe: ^4.0.4
-
-
-  flutter_hooks:
+  # 状態管理
+  flutter_riverpod: any
+  flutter_hooks: any
+  hooks_riverpod: any
 
 
 
@@ -44,7 +45,8 @@ flutter:
   assets:
     - assets/
     - assets/app/
-    - assets/app/images/
+    - assets/utils/
+    - assets/projects/
 
   fonts:
     - family: Climate

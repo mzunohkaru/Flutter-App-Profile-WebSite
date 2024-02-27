@@ -172,9 +172,12 @@ class _DesktopPolicyPageState extends State<DesktopPolicyPage> {
               //制定日
               Text(
                 isJP ? "制定日：2022年4月1日" : "Date of enactment: April 1, 2022",
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white70,
                 ),
+              ),
+              const SizedBox(
+                height: 80,
               ),
             ],
           ),

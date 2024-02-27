@@ -44,7 +44,7 @@ class _DesktopContactPageState extends State<DesktopContactPage> {
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      SubtitleText(subtitle: "Contact"),
+                      const SubtitleText(subtitle: "Contact"),
                       const SizedBox(height: 30),
                       // Mail
                       buildTextField(
@@ -73,6 +73,7 @@ class _DesktopContactPageState extends State<DesktopContactPage> {
                                   email: emailCont.text,
                                   message: messageCont.text);
                             });
+                            showSendMailDialog();
                             resetContact();
                           }
                         },
@@ -81,15 +82,16 @@ class _DesktopContactPageState extends State<DesktopContactPage> {
                           height: 48,
                           width: 200,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(40),
+                              borderRadius: BorderRadius.circular(8),
                               gradient: const LinearGradient(colors: [
                                 Color.fromARGB(255, 216, 216, 216),
                                 Color.fromARGB(255, 92, 92, 92),
                               ]),
                               boxShadow: [
                                 BoxShadow(
-                                    color: Color.fromARGB(255, 216, 216, 216)
-                                        .withOpacity(.6),
+                                    color:
+                                        const Color.fromARGB(255, 216, 216, 216)
+                                            .withOpacity(.6),
                                     spreadRadius: 1,
                                     blurRadius: 8,
                                     offset: const Offset(3, 3))
@@ -128,7 +130,7 @@ class _DesktopContactPageState extends State<DesktopContactPage> {
     const userId = 'user_QJq7e6a5biy5mQMKpkqSs';
 
     final url = Uri.parse('https://api.emailjs.com/api/v1.0/email/send');
-    final response = await http.post(url,
+    await http.post(url,
         headers: {
           'origin': 'http://localhost',
           'Content-Type': 'application/json'
@@ -169,7 +171,7 @@ class _DesktopContactPageState extends State<DesktopContactPage> {
           const SizedBox(
             height: 10,
           ),
-          Container(
+          SizedBox(
             width: widget.deviceWidth / 2.4,
             child: TextFormField(
               autofocus: true,
@@ -224,7 +226,7 @@ class _DesktopContactPageState extends State<DesktopContactPage> {
           const SizedBox(
             height: 10,
           ),
-          Container(
+          SizedBox(
             width: widget.deviceWidth / 2.4,
             child: TextFormField(
               controller: controller,
@@ -281,7 +283,7 @@ class _DesktopContactPageState extends State<DesktopContactPage> {
           const SizedBox(
             height: 10,
           ),
-          Container(
+          SizedBox(
             width: widget.deviceWidth / 2.4,
             child: TextFormField(
                 controller: controller,
@@ -306,4 +308,27 @@ class _DesktopContactPageState extends State<DesktopContactPage> {
           )
         ],
       );
+
+  void showSendMailDialog() {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('送信完了'),
+          titleTextStyle: const TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),
+          content: const Text('お問い合わせありがとうございます。追ってご連絡いたします。'),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('閉じる'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
 }

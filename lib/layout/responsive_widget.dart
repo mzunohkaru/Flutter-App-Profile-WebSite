@@ -5,11 +5,11 @@ import 'package:flutter_profile_web/pages/policys/desktop_policy_page.dart';
 import 'package:flutter_profile_web/pages/policys/mobile_policy_page.dart';
 import 'package:flutter_profile_web/pages/products/desktop_products_page.dart';
 import 'package:flutter_profile_web/pages/products/mobile_products_page.dart';
-import 'package:flutter_profile_web/pages/projects/desktop_projects_page.dart';
+import 'package:flutter_profile_web/pages/projects/desktop_flutter_projects_page.dart';
 import 'package:flutter_profile_web/pages/projects/mobile_projects_page.dart';
 import 'package:flutter_profile_web/pages/swift_projects/desktop_swift_projects_page.dart';
-import 'package:flutter_profile_web/utils/app_url.dart';
 import 'package:flutter_profile_web/utils/constants.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sidebarx/sidebarx.dart';
 
 class SideMenuWidget extends StatelessWidget {
@@ -78,50 +78,43 @@ class SideMenuWidget extends StatelessWidget {
       },
       items: [
         const SidebarXItem(
-          icon: Icons.home,
-          label: 'Products',
+          iconWidget: FaIcon(
+            FontAwesomeIcons.unity,
+            color: Colors.grey,
+          ),
+          label: 'Unity',
         ),
         const SidebarXItem(
-          icon: Icons.person,
-          label: 'About Me',
+          iconWidget: FaIcon(
+            FontAwesomeIcons.swift,
+            color: Colors.blue,
+          ),
+          label: 'Swift UI',
         ),
         const SidebarXItem(
-          icon: Icons.folder,
-          label: 'Projects',
+          iconWidget: FlutterLogo(),
+          label: 'Flutter',
         ),
         const SidebarXItem(
-          icon: Icons.shield,
+          iconWidget: Icon(
+            Icons.shield,
+            color: Colors.grey,
+          ),
           label: 'Policy',
         ),
         const SidebarXItem(
-          icon: Icons.mail,
+          iconWidget: Icon(
+            Icons.mail,
+            color: Colors.grey,
+          ),
           label: 'Contact',
         ),
         SidebarXItem(
           iconWidget: SizedBox(
               width: 20,
               height: 20,
-              child: Image.asset('assets/app/github_icon.png')),
-          label: 'Github',
-          onTap: GithubURL
-        ),
-        SidebarXItem(
-          iconWidget: SizedBox(
-              width: 20,
-              height: 20,
-              child: Image.asset('assets/app/apple_store_icon.png')),
-          label: 'Apple Store',
-          onTap: storeAppleURL
-        ),
-        SidebarXItem(
-          iconWidget: SizedBox(
-              width: 20,
-              height: 20,
-              child: Image.asset(
-                'assets/app/play_storeicon.png',
-              )),
-          label: 'Play Store',
-          onTap: storeAndroidURL
+              child: Image.asset('assets/utils/github_icon.png')),
+          label: 'SNS',
         ),
       ],
     );
@@ -164,13 +157,14 @@ class _SideMenuBodyWidgetState extends State<SideMenuBodyWidget> {
                     deviceWidth: deviceWidth,
                     deviceHeight: deviceHeight,
                   )
-                : DesktopProductPage(deviceWidth: deviceWidth, deviceHeight: deviceHeight);
+                : DesktopProductPage(
+                    deviceWidth: deviceWidth, deviceHeight: deviceHeight);
           case 1:
-            return const DesktopSwiftProjectsPage();
+            return DesktopSwiftProjectsPage(deviceHeight: deviceHeight);
           case 2:
             return widget.mobile
                 ? MobileProjectPage(deviceWidth: deviceWidth)
-                :  DesktopProjectPage(deviceHeight: deviceHeight);
+                : DesktopFlutterProjectsPage(deviceHeight: deviceHeight);
           case 3:
             return widget.mobile
                 ? MobilePolicyPage(
@@ -182,6 +176,13 @@ class _SideMenuBodyWidgetState extends State<SideMenuBodyWidget> {
             return widget.mobile
                 ? const MobileContactPage()
                 : DesktopContactPage(deviceWidth: deviceWidth);
+          case 5:
+            return Scaffold(
+              body: Text(
+                "sns",
+                style: TextStyle(color: Colors.white),
+              ),
+            );
           default:
             return const SizedBox();
         }

@@ -39,7 +39,7 @@ class _MobileProjectPageState extends State<MobileProjectPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Image.asset(
-                      "assets/app/images/ui10.png",
+                      "assets/app/ui10.png",
                       filterQuality: FilterQuality.medium,
                       width: widget.deviceWidth * 0.33,
                     ),
@@ -72,7 +72,7 @@ class _MobileProjectPageState extends State<MobileProjectPage> {
                       ],
                     ),
                     Image.asset(
-                      "assets/app/images/ui11.png",
+                      "assets/app/ui11.png",
                       filterQuality: FilterQuality.medium,
                       width: widget.deviceWidth * 0.33,
                     ),
@@ -92,7 +92,7 @@ class _MobileProjectPageState extends State<MobileProjectPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Image.asset(
-                      "assets/app/images/ui12.png",
+                      "assets/app/ui12.png",
                       filterQuality: FilterQuality.medium,
                       width: widget.deviceWidth * 0.33,
                     ),
@@ -125,7 +125,7 @@ class _MobileProjectPageState extends State<MobileProjectPage> {
                       ],
                     ),
                     Image.asset(
-                      "assets/app/images/ui13.png",
+                      "assets/app/ui13.png",
                       filterQuality: FilterQuality.medium,
                       width: widget.deviceWidth * 0.33,
                     ),
@@ -136,12 +136,12 @@ class _MobileProjectPageState extends State<MobileProjectPage> {
                 height: 20,
               ),
               buildGithubCard(
-                  "assets/app/images/ui1.png", "旅行予約アプリ", GithubTravelURL),
+                  "assets/app/ui1.png", "旅行予約アプリ", GithubTravelURL),
               const SizedBox(
                 height: 20,
               ),
-              buildGithubCard(
-                  "assets/app/images/ui2.png", "デリバリーアプリ", GithubFoodURL),
+              // buildGithubCard(
+              //     "assets/app/ui2.png", "デリバリーアプリ", GithubFoodURL),
             ],
           ),
         ),

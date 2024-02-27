@@ -1,36 +1,65 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:youtube_player_iframe/youtube_player_iframe.dart';
+import 'package:flutter_profile_web/utils/app_url.dart';
+import 'package:flutter_profile_web/widget/github_card_widget.dart';
+import 'package:flutter_profile_web/widget/subtitle_widget.dart';
 
 class DesktopSwiftProjectsPage extends HookWidget {
-  const DesktopSwiftProjectsPage({super.key});
+  final double deviceHeight;
+
+  const DesktopSwiftProjectsPage({super.key, required this.deviceHeight});
 
   @override
   Widget build(BuildContext context) {
-    final controller_1 = useMemoized(() => YoutubePlayerController.fromVideoId(
-          videoId: 'ZgSu8ie-9lE',
-          autoPlay: false,
-          params: const YoutubePlayerParams(
-            mute: true,
-            showControls: true,
-            showFullscreenButton: true,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 12),
+      child: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SubtitleText(subtitle: "Swift UI"),
+              const SizedBox(
+                height: 30,
+              ),
+              GithubCardWidget(
+                  deviceHeight: deviceHeight,
+                  image: "assets/projects/swiftui_tiktok.png",
+                  githubCallback: GithubTravelURL,
+                  youtube: true,
+                  youtubeCallback: GithubMemoURL),
+              const SizedBox(
+                height: 60,
+              ),
+              GithubCardWidget(
+                  deviceHeight: deviceHeight,
+                  image: "assets/projects/swiftui_instagram.png",
+                  githubCallback: GithubTravelURL,
+                  youtube: true,
+                  youtubeCallback: GithubTravelURL),
+              const SizedBox(
+                height: 60,
+              ),
+              GithubCardWidget(
+                  deviceHeight: deviceHeight,
+                  image: "assets/projects/swiftui_threads.png",
+                  githubCallback: GithubTravelURL,
+                  youtube: true,
+                  youtubeCallback: GithubTravelURL),
+              const SizedBox(
+                height: 60,
+              ),
+              GithubCardWidget(
+                  deviceHeight: deviceHeight,
+                  image: "assets/projects/swiftui_airbnb.png",
+                  githubCallback: GithubTravelURL,
+                  youtube: true,
+                  youtubeCallback: GithubTravelURL),
+              const SizedBox(
+                height: 80,
+              ),
+            ],
           ),
-        ));
-    useEffect(() {
-      return controller_1.close;
-    }, [controller_1]);
-
-    return Scaffold(
-      body: ListView(
-        children: <Widget>[
-          SizedBox(
-            width: MediaQuery.of(context).size.width / 1.5,
-            child: YoutubePlayer(
-              controller: controller_1,
-              aspectRatio: 16 / 9,
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }

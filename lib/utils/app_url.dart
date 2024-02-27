@@ -119,6 +119,6 @@ Future<void> GithubTravelURL() async => await canLaunch(githubTravel)
     ? await launch(githubTravel)
     : throw 'Could not launch $githubTravel';
 
-    Future<void> GithubMemoURL() async => await canLaunch(githubMemo)
+Future<void> GithubMemoURL() async => await canLaunch(githubMemo)
     ? await launch(githubMemo)
     : throw 'Could not launch $githubMemo';

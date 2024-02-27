@@ -91,7 +91,7 @@ class SidebarWidget extends StatelessWidget {
             iconWidget: SizedBox(
                 width: 20,
                 height: 20,
-                child: Image.asset('assets/app/github_icon.png')),
+                child: Image.asset('assets/utils/github_icon.png')),
             label: 'Github',
             // onTap: GithubURL
             ),
@@ -99,7 +99,7 @@ class SidebarWidget extends StatelessWidget {
             iconWidget: SizedBox(
                 width: 20,
                 height: 20,
-                child: Image.asset('assets/app/apple_store_icon.png')),
+                child: Image.asset('assets/utils/apple_store_icon.png')),
             label: 'Apple Store',
             // onTap: storeAppleURL
             ),
@@ -108,7 +108,7 @@ class SidebarWidget extends StatelessWidget {
                 width: 20,
                 height: 20,
                 child: Image.asset(
-                  'assets/app/play_storeicon.png',
+                  'assets/utils/play_storeicon.png',
                 )),
             label: 'Play Store',
             // onTap: storeAndroidURL

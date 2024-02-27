@@ -27,7 +27,7 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const SubtitleText(subtitle: "Products"),
+              const SubtitleText(subtitle: "Unity"),
               const SizedBox(
                 height: 30,
               ),
@@ -39,7 +39,7 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
                       Container(
                         height: widget.deviceHeight / 1.2,
                         child: Image.asset(
-                          "assets/app/images/ui5.png",
+                          "assets/app/ui5.png",
                         ),
                       ),
                     ],
@@ -63,12 +63,12 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
                           height: 60,
                         ),
                         buildStoreButton(
-                            "assets/app/apple_store.png", escTerausaIOSURL),
+                            "assets/utils/apple_store.png", escTerausaIOSURL),
                         const SizedBox(
                           height: 12,
                         ),
                         buildStoreButton(
-                            "assets/app/play_store.png", escTerausaAndroidURL),
+                            "assets/utils/play_store.png", escTerausaAndroidURL),
                       ],
                     ),
                   ),
@@ -93,7 +93,7 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
                           height: 60,
                         ),
                         buildStoreButton(
-                            "assets/app/apple_store.png", escAburayaIOSURL),
+                            "assets/utils/apple_store.png", escAburayaIOSURL),
                       ],
                     ),
                   ),
@@ -106,7 +106,7 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
                       SizedBox(
                         height: widget.deviceHeight / 1.2,
                         child: Image.asset(
-                          "assets/app/images/ui6.png",
+                          "assets/app/ui6.png",
                         ),
                       ),
                     ],
@@ -121,7 +121,7 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
                       SizedBox(
                         height: widget.deviceHeight / 1.2,
                         child: Image.asset(
-                          "assets/app/images/ui7.png",
+                          "assets/app/ui7.png",
                         ),
                       ),
                     ],
@@ -145,12 +145,12 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
                           height: 60,
                         ),
                         buildStoreButton(
-                            "assets/app/apple_store.png", escTabidachiIOSURL),
+                            "assets/utils/apple_store.png", escTabidachiIOSURL),
                         const SizedBox(
                           height: 12,
                         ),
                         buildStoreButton(
-                            "assets/app/play_store.png", escTabidachiAndroidURL),
+                            "assets/utils/play_store.png", escTabidachiAndroidURL),
                       ],
                     ),
                   ),
@@ -175,12 +175,12 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
                           height: 60,
                         ),
                         buildStoreButton(
-                            "assets/app/apple_store.png", escFairyIOSURL),
+                            "assets/utils/apple_store.png", escFairyIOSURL),
                         const SizedBox(
                           height: 12,
                         ),
                         buildStoreButton(
-                            "assets/app/play_store.png", escTanabataAndroidURL),
+                            "assets/utils/play_store.png", escTanabataAndroidURL),
                       ],
                     ),
                   ),
@@ -193,7 +193,7 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
                       SizedBox(
                         height: widget.deviceHeight / 1.2,
                         child: Image.asset(
-                          "assets/app/images/ui8.png",
+                          "assets/app/ui8.png",
                         ),
                       ),
                     ],
@@ -208,7 +208,7 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
                       SizedBox(
                         height: widget.deviceHeight / 1.2,
                         child: Image.asset(
-                          "assets/app/images/ui9.png",
+                          "assets/app/ui9.png",
                         ),
                       ),
                     ],
@@ -232,12 +232,12 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
                           height: 60,
                         ),
                         buildStoreButton(
-                            "assets/app/apple_store.png", escTanabataIOSURL),
+                            "assets/utils/apple_store.png", escTanabataIOSURL),
                         const SizedBox(
                           height: 12,
                         ),
                         buildStoreButton(
-                            "assets/app/play_store.png", escTanabataAndroidURL),
+                            "assets/utils/play_store.png", escTanabataAndroidURL),
                       ],
                     ),
                   ),
@@ -275,10 +275,10 @@ class _DesktopProductPageState extends State<DesktopProductPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              buildStoreButton("assets/app/apple_store.png", iosPressed),
+              buildStoreButton("assets/utils/apple_store.png", iosPressed),
               android
                   ? buildStoreButton(
-                      "assets/app/play_store.png", androidPressed)
+                      "assets/utils/play_store.png", androidPressed)
                   : SizedBox(),
             ],
           ),

@@ -28,7 +28,7 @@ class _MobileProductPageState extends State<MobileProductPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const SubtitleText(subtitle: "Products"),
+              const SubtitleText(subtitle: "Unity"),
               const SizedBox(
                 height: 30,
               ),
@@ -38,7 +38,7 @@ class _MobileProductPageState extends State<MobileProductPage> {
                   Container(
                     width: widget.deviceWidth / 1.2,
                     child: Image.asset(
-                      "assets/app/images/ui5.png",
+                      "assets/app/ui5.png",
                     ),
                   ),
                   Positioned(
@@ -71,9 +71,9 @@ class _MobileProductPageState extends State<MobileProductPage> {
                   ),
                 ],
               ),
-              buildStoreButton("assets/app/apple_store.png", escTerausaIOSURL),
+              buildStoreButton("assets/utils/apple_store.png", escTerausaIOSURL),
               buildStoreButton(
-                  "assets/app/play_store.png", escTerausaAndroidURL),
+                  "assets/utils/play_store.png", escTerausaAndroidURL),
               buildDivider(),
               Stack(
                 alignment: Alignment.bottomCenter,
@@ -81,7 +81,7 @@ class _MobileProductPageState extends State<MobileProductPage> {
                   Container(
                     width: widget.deviceWidth / 1.2,
                     child: Image.asset(
-                      "assets/app/images/ui6.png",
+                      "assets/app/ui6.png",
                     ),
                   ),
                   Positioned(
@@ -116,7 +116,7 @@ class _MobileProductPageState extends State<MobileProductPage> {
                   ),
                 ],
               ),
-              buildStoreButton("assets/app/apple_store.png", escAburayaIOSURL),
+              buildStoreButton("assets/utils/apple_store.png", escAburayaIOSURL),
               buildDivider(),
               Stack(
                 alignment: Alignment.bottomCenter,
@@ -124,7 +124,7 @@ class _MobileProductPageState extends State<MobileProductPage> {
                   Container(
                     width: widget.deviceWidth / 1.2,
                     child: Image.asset(
-                      "assets/app/images/ui7.png",
+                      "assets/app/ui7.png",
                     ),
                   ),
                   Positioned(
@@ -159,9 +159,9 @@ class _MobileProductPageState extends State<MobileProductPage> {
                 ],
               ),
               buildStoreButton(
-                  "assets/app/apple_store.png", escTabidachiIOSURL),
+                  "assets/utils/apple_store.png", escTabidachiIOSURL),
               buildStoreButton(
-                  "assets/app/play_store.png", escTabidachiAndroidURL),
+                  "assets/utils/play_store.png", escTabidachiAndroidURL),
               buildDivider(),
               Stack(
                 alignment: Alignment.bottomCenter,
@@ -169,7 +169,7 @@ class _MobileProductPageState extends State<MobileProductPage> {
                   Container(
                     width: widget.deviceWidth / 1.2,
                     child: Image.asset(
-                      "assets/app/images/ui8.png",
+                      "assets/app/ui8.png",
                     ),
                   ),
                   Positioned(
@@ -204,7 +204,7 @@ class _MobileProductPageState extends State<MobileProductPage> {
                   ),
                 ],
               ),
-              buildStoreButton("assets/app/apple_store.png", escFairyIOSURL),
+              buildStoreButton("assets/utils/apple_store.png", escFairyIOSURL),
               buildDivider(),
               Stack(
                 alignment: Alignment.bottomCenter,
@@ -212,7 +212,7 @@ class _MobileProductPageState extends State<MobileProductPage> {
                   Container(
                     width: widget.deviceWidth / 1.2,
                     child: Image.asset(
-                      "assets/app/images/ui9.png",
+                      "assets/app/ui9.png",
                     ),
                   ),
                   Positioned(
@@ -245,9 +245,9 @@ class _MobileProductPageState extends State<MobileProductPage> {
                   ),
                 ],
               ),
-              buildStoreButton("assets/app/apple_store.png", escTanabataIOSURL),
+              buildStoreButton("assets/utils/apple_store.png", escTanabataIOSURL),
               buildStoreButton(
-                  "assets/app/play_store.png", escTanabataAndroidURL),
+                  "assets/utils/play_store.png", escTanabataAndroidURL),
               const SizedBox(
                 height: 80,
               )
