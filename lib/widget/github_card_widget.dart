@@ -63,7 +63,7 @@ class GithubCardWidget extends HookWidget {
                 ),
               ),
         const SizedBox(
-          height: 30,
+          height: 24,
         )
       ],
     );

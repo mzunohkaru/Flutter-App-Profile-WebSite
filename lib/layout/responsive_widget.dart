@@ -5,9 +5,11 @@ import 'package:flutter_profile_web/pages/policys/desktop_policy_page.dart';
 import 'package:flutter_profile_web/pages/policys/mobile_policy_page.dart';
 import 'package:flutter_profile_web/pages/products/desktop_products_page.dart';
 import 'package:flutter_profile_web/pages/products/mobile_products_page.dart';
-import 'package:flutter_profile_web/pages/projects/desktop_flutter_projects_page.dart';
-import 'package:flutter_profile_web/pages/projects/mobile_projects_page.dart';
-import 'package:flutter_profile_web/pages/swift_projects/desktop_swift_projects_page.dart';
+import 'package:flutter_profile_web/pages/projects_flutter/desktop_flutter_projects_page.dart';
+import 'package:flutter_profile_web/pages/projects_flutter/mobile_flutter_projects_page.dart';
+import 'package:flutter_profile_web/pages/projects_swift/desktop_swift_projects_page.dart';
+import 'package:flutter_profile_web/pages/projects_swift/mobile_swift_projects_page.dart';
+import 'package:flutter_profile_web/utils/app_url.dart';
 import 'package:flutter_profile_web/utils/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sidebarx/sidebarx.dart';
@@ -109,13 +111,34 @@ class SideMenuWidget extends StatelessWidget {
           ),
           label: 'Contact',
         ),
+        const SidebarXItem(
+            iconWidget: FaIcon(
+              FontAwesomeIcons.github,
+              color: Colors.grey,
+            ),
+            label: 'GitHub',
+            onTap: Github_URL),
+        const SidebarXItem(
+            iconWidget: FaIcon(
+              FontAwesomeIcons.youtube,
+              color: Colors.redAccent,
+            ),
+            label: 'Youtube',
+            onTap: Youtube_URL),
         SidebarXItem(
-          iconWidget: SizedBox(
-              width: 20,
-              height: 20,
-              child: Image.asset('assets/utils/github_icon.png')),
-          label: 'SNS',
-        ),
+            iconWidget: SizedBox(
+                width: 24,
+                height: 24,
+                child: Image.asset('assets/utils/play_storeicon.png')),
+            label: 'Play Store',
+            onTap: Android_Store_URL),
+        SidebarXItem(
+            iconWidget: SizedBox(
+                width: 25,
+                height: 25,
+                child: Image.asset('assets/utils/apple_store_icon.png')),
+            label: 'Apple Store',
+            onTap: Apple_Store_URL),
       ],
     );
   }
@@ -160,11 +183,14 @@ class _SideMenuBodyWidgetState extends State<SideMenuBodyWidget> {
                 : DesktopProductPage(
                     deviceWidth: deviceWidth, deviceHeight: deviceHeight);
           case 1:
-            return DesktopSwiftProjectsPage(deviceHeight: deviceHeight);
+            return widget.mobile
+                ? const MobileSwiftProjectsPage()
+                : DesktopSwiftProjectsPage(deviceHeight: deviceHeight);
           case 2:
             return widget.mobile
-                ? MobileProjectPage(deviceWidth: deviceWidth)
-                : DesktopFlutterProjectsPage(deviceHeight: deviceHeight);
+                ? const MobileFlutterProjectsPage()
+                : DesktopFlutterProjectsPage(
+                    deviceWidth: deviceWidth, deviceHeight: deviceHeight);
           case 3:
             return widget.mobile
                 ? MobilePolicyPage(
@@ -176,13 +202,6 @@ class _SideMenuBodyWidgetState extends State<SideMenuBodyWidget> {
             return widget.mobile
                 ? const MobileContactPage()
                 : DesktopContactPage(deviceWidth: deviceWidth);
-          case 5:
-            return Scaffold(
-              body: Text(
-                "sns",
-                style: TextStyle(color: Colors.white),
-              ),
-            );
           default:
             return const SizedBox();
         }

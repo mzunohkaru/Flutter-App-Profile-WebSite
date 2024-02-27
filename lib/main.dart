@@ -45,6 +45,7 @@ class MyApp extends StatelessWidget {
             key: _key,
             appBar: isSmallScreen
                 ? AppBar(
+                    elevation: 0,
                     backgroundColor: canvasColor,
                     leading: IconButton(
                       onPressed: () {
@@ -53,7 +54,10 @@ class MyApp extends StatelessWidget {
                         // }
                         _key.currentState?.openDrawer();
                       },
-                      icon: const Icon(Icons.menu, color: Colors.white,),
+                      icon: const Icon(
+                        Icons.menu,
+                        color: Colors.white,
+                      ),
                     ),
                   )
                 : null,
@@ -62,10 +66,13 @@ class MyApp extends StatelessWidget {
               children: [
                 if (!isSmallScreen) SideMenuWidget(controller: _controller),
                 Expanded(
-                  child: Center(
-                    child: SideMenuBodyWidget(
-                      controller: _controller,
-                      mobile: isSmallScreen,
+                  child: SafeArea(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 12),
+                      child: SideMenuBodyWidget(
+                        controller: _controller,
+                        mobile: isSmallScreen,
+                      ),
                     ),
                   ),
                 ),

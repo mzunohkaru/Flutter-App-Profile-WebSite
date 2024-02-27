@@ -15,106 +15,101 @@ class DesktopContactPage extends StatefulWidget {
 
 class _DesktopContactPageState extends State<DesktopContactPage> {
   //* コンタクト
-  late final nameCont = TextEditingController();
-  late final emailCont = TextEditingController();
-  final messageCont = TextEditingController();
+  final nameController = TextEditingController();
+  final emailController = TextEditingController();
+  final messageController = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
-  final namefocus = FocusNode();
-  final agefocus = FocusNode();
-
-  final String resetText = "";
 
   void resetContact() {
-    nameCont.text = resetText;
-    emailCont.text = resetText;
-    messageCont.text = resetText;
+    nameController.text = "";
+    emailController.text = "";
+    messageController.text = "";
+  }
+
+  @override
+  void dispose() {
+    nameController.dispose();
+    emailController.dispose();
+    messageController.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) => GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
-        child: Scaffold(
-          backgroundColor: Colors.transparent,
-          body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
-            child: SafeArea(
-              child: Form(
-                key: _formKey,
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      const SubtitleText(subtitle: "Contact"),
-                      const SizedBox(height: 30),
-                      // Mail
-                      buildTextField(
-                        title: 'お名前',
-                        controller: nameCont,
-                        hint: '山田太郎　または　会社名',
-                      ),
-                      const SizedBox(height: 30),
-                      emailTextField(
-                          title: 'メールアドレス',
-                          controller: emailCont,
-                          hint: 'example@mail.com'),
-                      const SizedBox(height: 30),
-                      contentTextField(
-                        title: '内容',
-                        controller: messageCont,
-                        hint: '',
-                      ),
-                      const SizedBox(height: 60),
-                      GestureDetector(
-                        onTap: () {
-                          if (_formKey.currentState!.validate()) {
-                            setState(() {
-                              sendEmail(
-                                  name: nameCont.text,
-                                  email: emailCont.text,
-                                  message: messageCont.text);
-                            });
-                            showSendMailDialog();
-                            resetContact();
-                          }
-                        },
-                        child: AnimatedContainer(
-                          duration: const Duration(milliseconds: 200),
-                          height: 48,
-                          width: 200,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
-                              gradient: const LinearGradient(colors: [
-                                Color.fromARGB(255, 216, 216, 216),
-                                Color.fromARGB(255, 92, 92, 92),
-                              ]),
-                              boxShadow: [
-                                BoxShadow(
-                                    color:
-                                        const Color.fromARGB(255, 216, 216, 216)
-                                            .withOpacity(.6),
-                                    spreadRadius: 1,
-                                    blurRadius: 8,
-                                    offset: const Offset(3, 3))
-                              ]),
-                          child: const Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text(
-                                "送信",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ],
-                          ),
+        child: Form(
+          key: _formKey,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                const SubtitleText(subtitle: "Contact"),
+                const SizedBox(height: 30),
+                // Mail
+                buildTextField(
+                  title: 'お名前',
+                  controller: nameController,
+                  hint: '山田太郎　または　会社名',
+                ),
+                const SizedBox(height: 30),
+                emailTextField(
+                    title: 'メールアドレス',
+                    controller: emailController,
+                    hint: 'example@mail.com'),
+                const SizedBox(height: 30),
+                contentTextField(
+                  title: '内容',
+                  controller: messageController,
+                  hint: '',
+                ),
+                const SizedBox(height: 60),
+                GestureDetector(
+                  onTap: () {
+                    if (_formKey.currentState!.validate()) {
+                      setState(() {
+                        sendEmail(
+                            name: nameController.text,
+                            email: emailController.text,
+                            message: messageController.text);
+                      });
+                      showSendMailDialog();
+                      resetContact();
+                    }
+                  },
+                  child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 200),
+                    height: 48,
+                    width: 200,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        gradient: const LinearGradient(colors: [
+                          Color.fromARGB(255, 216, 216, 216),
+                          Color.fromARGB(255, 92, 92, 92),
+                        ]),
+                        boxShadow: [
+                          BoxShadow(
+                              color: const Color.fromARGB(255, 216, 216, 216)
+                                  .withOpacity(.6),
+                              spreadRadius: 1,
+                              blurRadius: 8,
+                              offset: const Offset(3, 3))
+                        ]),
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          "送信",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
+              ],
             ),
           ),
         ),

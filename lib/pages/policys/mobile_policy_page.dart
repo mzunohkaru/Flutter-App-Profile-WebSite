@@ -26,8 +26,10 @@ class _MobilePolicyPageState extends State<MobilePolicyPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SubtitleText(subtitle: "Privacy Policy"),
-              const SizedBox(height: 30,),
+              const SubtitleText(subtitle: "Policy"),
+              const SizedBox(
+                height: 30,
+              ),
               //見出し
               Text(
                 widget.isJP
@@ -36,10 +38,10 @@ class _MobilePolicyPageState extends State<MobilePolicyPage> {
                 style: const TextStyle(
                   color: Colors.white70,
                 ),
-              ), 
+              ),
               const SizedBox(
-              height: 30,
-            ),
+                height: 30,
+              ),
               //小見出し
               buildHead(
                   icon: const Icon(
@@ -59,8 +61,9 @@ class _MobilePolicyPageState extends State<MobilePolicyPage> {
                     Icons.local_police_outlined,
                     color: Colors.lightBlue,
                   ),
-                  head:
-                      widget.isJP ? "個人情報の利用について" : "Use of Personal Information"),
+                  head: widget.isJP
+                      ? "個人情報の利用について"
+                      : "Use of Personal Information"),
               //本文
               buildText(
                 widget.isJP
@@ -149,7 +152,7 @@ class _MobilePolicyPageState extends State<MobilePolicyPage> {
                     color: Colors.lightBlue,
                   ),
                   head: widget.isJP ? "組織・体制" : "Organization"),
-        
+
               //本文
               buildText(
                 widget.isJP
@@ -181,11 +184,14 @@ class _MobilePolicyPageState extends State<MobilePolicyPage> {
                     widget.isJP
                         ? "制定日：2022年4月1日"
                         : "Date of enactment: April 1, 2022",
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white70,
                     ),
                   ),
                 ),
+              ),
+              const SizedBox(
+                height: 40,
               ),
             ],
           ),
@@ -201,7 +207,9 @@ class _MobilePolicyPageState extends State<MobilePolicyPage> {
       child: Row(
         children: [
           icon,
-          const SizedBox(width: 10,),
+          const SizedBox(
+            width: 10,
+          ),
           Text(head,
               style: const TextStyle(
                   decoration: TextDecoration.underline,

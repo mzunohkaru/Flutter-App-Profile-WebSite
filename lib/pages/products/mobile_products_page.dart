@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_profile_web/pages/projects_flutter/desktop_flutter_projects_page.dart';
 import 'package:flutter_profile_web/utils/app_url.dart';
-
+import 'package:flutter_profile_web/utils/constants.dart';
 import 'package:flutter_profile_web/widget/subtitle_widget.dart';
 
 class MobileProductPage extends StatefulWidget {
@@ -14,12 +15,6 @@ class MobileProductPage extends StatefulWidget {
 }
 
 class _MobileProductPageState extends State<MobileProductPage> {
-  final titleStyle =
-      TextStyle(fontWeight: FontWeight.w600, fontSize: 20, color: Colors.white);
-
-  final subStyle =
-      TextStyle(fontWeight: FontWeight.w300, fontSize: 15, color: Colors.white);
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -35,7 +30,7 @@ class _MobileProductPageState extends State<MobileProductPage> {
               Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
-                  Container(
+                  SizedBox(
                     width: widget.deviceWidth / 1.2,
                     child: Image.asset(
                       "assets/app/ui5.png",
@@ -44,25 +39,25 @@ class _MobileProductPageState extends State<MobileProductPage> {
                   Positioned(
                     bottom: 60,
                     child: Card(
-                      color: Colors.white.withOpacity(0.5),
+                      color: Colors.white54.withOpacity(0.3),
                       elevation: 36,
                       child: Container(
                         width: widget.deviceWidth / 1.6,
-                        height: 200,
+                        height: 140,
                         margin: const EdgeInsets.all(10.0),
-                        child: Column(
+                        child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
                               "脱出ゲーム 寺うさ",
-                              style: titleStyle,
+                              style: kMobileTitleTextStyle,
                             ),
-                            const SizedBox(
+                            SizedBox(
                               height: 10,
                             ),
                             Text(
                               "風情のある、古風な日本の寺院からさまざまな謎や仕掛けを解いて2023年の初詣に行こう！",
-                              style: subStyle,
+                              style: kMobileSubTextStyle,
                             ),
                           ],
                         ),
@@ -71,14 +66,18 @@ class _MobileProductPageState extends State<MobileProductPage> {
                   ),
                 ],
               ),
-              buildStoreButton("assets/utils/apple_store.png", escTerausaIOSURL),
+              const SizedBox(
+                height: 30,
+              ),
               buildStoreButton(
-                  "assets/utils/play_store.png", escTerausaAndroidURL),
+                  "assets/utils/apple_store.png", Apple_Terausa_EscURL),
+              buildStoreButton(
+                  "assets/utils/play_store.png", Android_Terausa_EscURL),
               buildDivider(),
               Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
-                  Container(
+                  SizedBox(
                     width: widget.deviceWidth / 1.2,
                     child: Image.asset(
                       "assets/app/ui6.png",
@@ -87,27 +86,27 @@ class _MobileProductPageState extends State<MobileProductPage> {
                   Positioned(
                     bottom: 60,
                     child: Card(
-                      color: Colors.white.withOpacity(0.5),
+                      color: Colors.white54.withOpacity(0.3),
                       elevation: 36,
                       child: Container(
                         width: widget.deviceWidth / 1.6,
-                        height: 200,
+                        height: 140,
                         margin: const EdgeInsets.all(10.0),
-                        child: Column(
+                        child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
                               "脱出ゲーム あぶら屋",
-                              style: titleStyle,
+                              style: kMobileTitleTextStyle,
                             ),
-                            const SizedBox(
+                            SizedBox(
                               height: 10,
                             ),
                             Text(
                               "ようこそ「旅館あぶら屋」へ" +
                                   "\n空の移ろいと共に浮かび上がる" +
                                   "\n草花が揺れる客室 木々の香る露天風呂",
-                              style: subStyle,
+                              style: kMobileSubTextStyle,
                             ),
                           ],
                         ),
@@ -116,12 +115,16 @@ class _MobileProductPageState extends State<MobileProductPage> {
                   ),
                 ],
               ),
-              buildStoreButton("assets/utils/apple_store.png", escAburayaIOSURL),
+              const SizedBox(
+                height: 30,
+              ),
+              buildStoreButton(
+                  "assets/utils/apple_store.png", Apple_Aburaya_EscURL),
               buildDivider(),
               Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
-                  Container(
+                  SizedBox(
                     width: widget.deviceWidth / 1.2,
                     child: Image.asset(
                       "assets/app/ui7.png",
@@ -130,26 +133,26 @@ class _MobileProductPageState extends State<MobileProductPage> {
                   Positioned(
                     bottom: 60,
                     child: Card(
-                      color: Colors.white.withOpacity(0.5),
+                      color: Colors.white54.withOpacity(0.3),
                       elevation: 36,
                       child: Container(
                         width: widget.deviceWidth / 1.6,
-                        height: 200,
+                        height: 170,
                         margin: const EdgeInsets.all(10.0),
-                        child: Column(
+                        child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
                               "脱出ゲーム 旅立ち",
-                              style: titleStyle,
+                              style: kMobileTitleTextStyle,
                             ),
-                            const SizedBox(
+                            SizedBox(
                               height: 10,
                             ),
                             Text(
                               "個性的な生徒達を卒業させるべく奮闘！？" +
                                   "\n教師になって初めて受け持つことになったクラスには、自由奔放な生徒達が集まった。大きく羽ばたいて欲しいが。",
-                              style: subStyle,
+                              style: kMobileSubTextStyle,
                             ),
                           ],
                         ),
@@ -158,15 +161,18 @@ class _MobileProductPageState extends State<MobileProductPage> {
                   ),
                 ],
               ),
+              const SizedBox(
+                height: 30,
+              ),
               buildStoreButton(
-                  "assets/utils/apple_store.png", escTabidachiIOSURL),
+                  "assets/utils/apple_store.png", Apple_Tabidachi_EscURL),
               buildStoreButton(
-                  "assets/utils/play_store.png", escTabidachiAndroidURL),
+                  "assets/utils/play_store.png", Android_Tabidachi_EscURL),
               buildDivider(),
               Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
-                  Container(
+                  SizedBox(
                     width: widget.deviceWidth / 1.2,
                     child: Image.asset(
                       "assets/app/ui8.png",
@@ -175,27 +181,27 @@ class _MobileProductPageState extends State<MobileProductPage> {
                   Positioned(
                     bottom: 60,
                     child: Card(
-                      color: Colors.white.withOpacity(0.5),
+                      color: Colors.white54.withOpacity(0.3),
                       elevation: 36,
                       child: Container(
                         width: widget.deviceWidth / 1.6,
                         height: 200,
                         margin: const EdgeInsets.all(10.0),
-                        child: Column(
+                        child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
                               "脱出ゲーム 異世界召喚",
-                              style: titleStyle,
+                              style: kMobileTitleTextStyle,
                             ),
-                            const SizedBox(
+                            SizedBox(
                               height: 10,
                             ),
                             Text(
                               "妖精の女王を名乗る”レーシィ ”に 異世界 に召喚されることに。" +
                                   "\n行方不明の父を探している”レーシィ ”と呪いの遺跡に行くのだがーー" +
                                   "\nきみは知ることになるだろう。呪いの正体　妖精の結末　父の行方　を。",
-                              style: subStyle,
+                              style: kMobileSubTextStyle,
                             ),
                           ],
                         ),
@@ -204,12 +210,16 @@ class _MobileProductPageState extends State<MobileProductPage> {
                   ),
                 ],
               ),
-              buildStoreButton("assets/utils/apple_store.png", escFairyIOSURL),
+              const SizedBox(
+                height: 30,
+              ),
+              buildStoreButton(
+                  "assets/utils/apple_store.png", Apple_Fairy_EscURL),
               buildDivider(),
               Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
-                  Container(
+                  SizedBox(
                     width: widget.deviceWidth / 1.2,
                     child: Image.asset(
                       "assets/app/ui9.png",
@@ -218,25 +228,25 @@ class _MobileProductPageState extends State<MobileProductPage> {
                   Positioned(
                     bottom: 5,
                     child: Card(
-                      color: Colors.white.withOpacity(0.5),
+                      color: Colors.white54.withOpacity(0.3),
                       elevation: 36,
                       child: Container(
                         width: widget.deviceWidth / 1.6,
-                        height: 120,
+                        height: 140,
                         margin: const EdgeInsets.all(10.0),
-                        child: Column(
+                        child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
                               "脱出ゲーム 七夕の昔話",
-                              style: titleStyle,
+                              style: kMobileTitleTextStyle,
                             ),
-                            const SizedBox(
+                            SizedBox(
                               height: 10,
                             ),
                             Text(
                               "神に引き離された彦星と織姫" + "\n果たして 彦星は織姫に会うことができるのか！？",
-                              style: subStyle,
+                              style: kMobileSubTextStyle,
                             ),
                           ],
                         ),
@@ -245,9 +255,13 @@ class _MobileProductPageState extends State<MobileProductPage> {
                   ),
                 ],
               ),
-              buildStoreButton("assets/utils/apple_store.png", escTanabataIOSURL),
+              const SizedBox(
+                height: 30,
+              ),
               buildStoreButton(
-                  "assets/utils/play_store.png", escTanabataAndroidURL),
+                  "assets/utils/apple_store.png", Apple_Tanabata_EscURL),
+              buildStoreButton(
+                  "assets/utils/play_store.png", Android_Tanabata_EscURL),
               const SizedBox(
                 height: 80,
               )
@@ -274,16 +288,6 @@ class _MobileProductPageState extends State<MobileProductPage> {
           ),
         ),
       ),
-    );
-  }
-
-  Divider buildDivider() {
-    return const Divider(
-      color: Colors.black45,
-      thickness: 0.5,
-      height: 50,
-      indent: 0,
-      endIndent: 0,
     );
   }
 }
