@@ -38,101 +38,100 @@ class _MobileContactPageState extends State<MobileContactPage> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: () => FocusScope.of(context).unfocus(),
-        child: SafeArea(
-          child: Form(
-            key: _formKey,
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    const SubtitleText(subtitle: "Contact"),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    // Mail
-                    buildTextField(
-                        title: 'お名前',
-                        controller: nameController,
-                        hint: '山田太郎　または　会社名'),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    emailTextField(
-                        title: 'メールアドレス',
-                        controller: emailController,
-                        hint: 'example@mail.com'),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    // Padding(
-                    //   padding: EdgeInsets.symmetric(
-                    //       horizontal: deviceWidth * 0.05, vertical: 10),
-                    //   child: buildTextField(
-                    //       title: '件名', controller: subjectCont, hint: 'アプリ開発の依頼'),
-                    // ),
-                    contentTextField(
-                        title: '内容', controller: messageController, hint: ''),
-                    const SizedBox(
-                      height: 40,
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        if (_formKey.currentState!.validate()) {
-                          setState(() {
-                            sendEmail(
-                                name: nameController.text,
-                                email: emailController.text,
-                                message: messageController.text);
-                          });
-                          resetContact();
-                          showSendMailDialog();
-                        }
-                      },
-                      child: AnimatedContainer(
-                        duration: const Duration(milliseconds: 200),
-                        height: 48,
-                        width: 200,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(40),
-                            gradient: const LinearGradient(colors: [
-                              Color.fromARGB(255, 216, 216, 216),
-                              Color.fromARGB(255, 92, 92, 92),
-                            ]),
-                            boxShadow: [
-                              BoxShadow(
-                                  color:
-                                      const Color.fromARGB(255, 216, 216, 216)
-                                          .withOpacity(.6),
-                                  spreadRadius: 1,
-                                  blurRadius: 8,
-                                  offset: const Offset(3, 3))
-                            ]),
-                        child: const Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              "送信",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: SafeArea(
+        child: Form(
+          key: _formKey,
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  const SubtitleText(subtitle: "Contact"),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  // Mail
+                  buildTextField(
+                      title: 'お名前',
+                      controller: nameController,
+                      hint: '山田太郎　または　会社名'),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  emailTextField(
+                      title: 'メールアドレス',
+                      controller: emailController,
+                      hint: 'example@mail.com'),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  // Padding(
+                  //   padding: EdgeInsets.symmetric(
+                  //       horizontal: deviceWidth * 0.05, vertical: 10),
+                  //   child: buildTextField(
+                  //       title: '件名', controller: subjectCont, hint: 'アプリ開発の依頼'),
+                  // ),
+                  contentTextField(
+                      title: '内容', controller: messageController, hint: ''),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      if (_formKey.currentState!.validate()) {
+                        setState(() {
+                          sendEmail(
+                              name: nameController.text,
+                              email: emailController.text,
+                              message: messageController.text);
+                        });
+                        resetContact();
+                        showSendMailDialog();
+                      }
+                    },
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 200),
+                      height: 48,
+                      width: 200,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          gradient: const LinearGradient(colors: [
+                            Color.fromARGB(255, 216, 216, 216),
+                            Color.fromARGB(255, 92, 92, 92),
+                          ]),
+                          boxShadow: [
+                            BoxShadow(
+                                color: const Color.fromARGB(255, 216, 216, 216)
+                                    .withOpacity(.6),
+                                spreadRadius: 1,
+                                blurRadius: 8,
+                                offset: const Offset(3, 3))
+                          ]),
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            "送信",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ],
                       ),
                     ),
-                    const SizedBox(
-                      height: 40,
-                    ),
-                  ],
-                ),
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                ],
               ),
             ),
           ),
         ),
+      ),
     );
   }
 
@@ -325,7 +324,7 @@ class _MobileContactPageState extends State<MobileContactPage> {
         ],
       );
 
-      void showSendMailDialog() {
+  void showSendMailDialog() {
     showDialog(
       context: context,
       barrierDismissible: false,

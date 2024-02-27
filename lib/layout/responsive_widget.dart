@@ -78,67 +78,39 @@ class SideMenuWidget extends StatelessWidget {
           height: 100,
         );
       },
-      items: [
-        const SidebarXItem(
+      items: const [
+        SidebarXItem(
           iconWidget: FaIcon(
             FontAwesomeIcons.unity,
             color: Colors.grey,
           ),
           label: 'Unity',
         ),
-        const SidebarXItem(
+        SidebarXItem(
           iconWidget: FaIcon(
             FontAwesomeIcons.swift,
             color: Colors.blue,
           ),
           label: 'Swift UI',
         ),
-        const SidebarXItem(
+        SidebarXItem(
           iconWidget: FlutterLogo(),
           label: 'Flutter',
         ),
-        const SidebarXItem(
+        SidebarXItem(
           iconWidget: Icon(
             Icons.shield,
             color: Colors.grey,
           ),
           label: 'Policy',
         ),
-        const SidebarXItem(
+        SidebarXItem(
           iconWidget: Icon(
             Icons.mail,
             color: Colors.grey,
           ),
           label: 'Contact',
-        ),
-        const SidebarXItem(
-            iconWidget: FaIcon(
-              FontAwesomeIcons.github,
-              color: Colors.grey,
-            ),
-            label: 'GitHub',
-            onTap: Github_URL),
-        const SidebarXItem(
-            iconWidget: FaIcon(
-              FontAwesomeIcons.youtube,
-              color: Colors.redAccent,
-            ),
-            label: 'Youtube',
-            onTap: Youtube_URL),
-        SidebarXItem(
-            iconWidget: SizedBox(
-                width: 24,
-                height: 24,
-                child: Image.asset('assets/utils/play_storeicon.png')),
-            label: 'Play Store',
-            onTap: Android_Store_URL),
-        SidebarXItem(
-            iconWidget: SizedBox(
-                width: 25,
-                height: 25,
-                child: Image.asset('assets/utils/apple_store_icon.png')),
-            label: 'Apple Store',
-            onTap: Apple_Store_URL),
+        )
       ],
     );
   }

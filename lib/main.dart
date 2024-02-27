@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_profile_web/layout/responsive_widget.dart';
+import 'package:flutter_profile_web/utils/app_url.dart';
 import 'package:flutter_profile_web/utils/constants.dart';
+import 'package:flutter_profile_web/utils/urls.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sidebarx/sidebarx.dart';
 
 void main() async {
@@ -59,6 +62,50 @@ class MyApp extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
+                    actions: [
+                      const InkWell(
+                        onTap: Youtube_URL,
+                        child: FaIcon(
+                          FontAwesomeIcons.youtube,
+                          size: 36,
+                          color: Colors.redAccent,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 4,
+                      ),
+                      const InkWell(
+                        onTap: Github_URL,
+                        child: FaIcon(
+                          FontAwesomeIcons.github,
+                          size: 36,
+                          color: Colors.white,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 4,
+                      ),
+                      InkWell(
+                        onTap: Apple_Store_URL,
+                        child: SizedBox(
+                          height: 42,
+                          width: 42,
+                          child:
+                              Image.asset("assets/utils/apple_store_icon.png"),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 4,
+                      ),
+                      InkWell(
+                        onTap: Android_Store_URL,
+                        child: SizedBox(
+                          height: 42,
+                          width: 42,
+                          child: Image.asset("assets/utils/play_storeicon.png"),
+                        ),
+                      ),
+                    ],
                   )
                 : null,
             drawer: SideMenuWidget(controller: _controller),
