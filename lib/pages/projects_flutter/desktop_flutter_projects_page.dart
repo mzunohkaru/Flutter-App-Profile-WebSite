@@ -32,11 +32,18 @@ class DesktopFlutterProjectsPage extends HookWidget {
           const ProjectDescriptionWidget(
               title: "アーキテクチャ", description: "・MVVM"),
           const Padding(
-            padding: EdgeInsets.symmetric(vertical: 8),
+            padding: EdgeInsets.symmetric(vertical: 16),
             child: ProjectDescriptionWidget(
-                title: "状態管理パッケージ",
+                title: "使用したパッケージ",
                 description:
-                    "・Riverpod, Hooks, Freezed, cached_network_image ..."),
+                    "・Riverpod, Hooks, Freezed, cached_network_image など\n＊詳しくはGitHubをご覧ください。"),
+          ),
+          const ProjectDescriptionWidget(
+              title: "バックエンド機能一覧",
+              description:
+                  "・ユーザー認証\n・プロフィール（名前、プロフィール画像など）の編集\n・投稿（動画、テキスト）\n・投稿へのいいね、コメント\n・フォロー\n・通知\n・ユーザー検索\n＊詳しくはYoutubeやGitHubをご覧ください。"),
+          const SizedBox(
+            height: 16,
           ),
           const ProjectDescriptionWidget(
               title: "技術面",
@@ -52,10 +59,17 @@ class DesktopFlutterProjectsPage extends HookWidget {
           const ProjectDescriptionWidget(
               title: "アーキテクチャ", description: "・MVVM"),
           const Padding(
-            padding: EdgeInsets.symmetric(vertical: 8),
+            padding: EdgeInsets.symmetric(vertical: 16),
             child: ProjectDescriptionWidget(
-                title: "状態管理パッケージ",
-                description: "・Riverpod, Hooks, Freezed ..."),
+                title: "使用したパッケージ",
+                description: "・Riverpod, Hooks, Freezed など\n＊詳しくはGitHubをご覧ください。"),
+          ),
+          const ProjectDescriptionWidget(
+              title: "バックエンド機能一覧",
+              description:
+                  "・ユーザー認証\n・プロフィール（名前、プロフィール画像など）の編集\n・投稿（画像、テキスト）\n・投稿へのいいね、コメント\n・フォロー\n・ユーザー検索\n＊詳しくはYoutubeやGitHubをご覧ください。"),
+          const SizedBox(
+            height: 16,
           ),
           const ProjectDescriptionWidget(
               title: "技術面",

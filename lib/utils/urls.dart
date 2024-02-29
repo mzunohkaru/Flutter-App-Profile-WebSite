@@ -24,16 +24,22 @@ Uri github_swift_instagram =
 // Swift Thread
 Uri github_swift_thread =
     Uri.parse("https://github.com/mzunohkaru/SwiftUI-Sample-Thread");
+// Swift Messanger
+Uri github_swift_messanger =
+    Uri.parse("https://github.com/mzunohkaru/SwiftUI-Sample-Messanger");
 // Swift Airbnb
 Uri github_swift_airbnb =
     Uri.parse("https://github.com/mzunohkaru/SwiftUI-UI-Airbnb");
+// Swift Crypto
+Uri github_swift_crypto =
+    Uri.parse("https://github.com/mzunohkaru/SwiftUI-Sample-API");
 
 // Youtube URL----------------------------------------------------------------
 Uri youtube = Uri.parse("https://www.youtube.com/@hikaru-mizuno/videos");
 Uri youtube_flutter_tiktok =
-    Uri.parse("https://www.youtube.com/watch?v=f2bhZXWC2Us");
+    Uri.parse("https://www.youtube.com/watch?v=CIdJKaieUGo");
 Uri youtube_flutter_instagram =
-    Uri.parse("https://www.youtube.com/watch?v=Mp2MTy_AkKk&t=12s");
+    Uri.parse("https://www.youtube.com/watch?v=FPwIqQolRTM");
 Uri youtube_swift_tiktok =
     Uri.parse("https://www.youtube.com/watch?v=z6xkmEBXTgw&t=13s");
 Uri youtube_swift_instagram =
@@ -42,6 +48,8 @@ Uri youtube_swift_threads =
     Uri.parse("https://www.youtube.com/watch?v=5A7RdFT0bbs");
 Uri youtube_swift_airbnb =
     Uri.parse("https://www.youtube.com/watch?v=WIJqH2f4oIQ");
+Uri youtube_swift_crypto =
+    Uri.parse("https://www.youtube.com/shorts/S46phALksYs");
 
 // Android App URL----------------------------------------------------------------
 

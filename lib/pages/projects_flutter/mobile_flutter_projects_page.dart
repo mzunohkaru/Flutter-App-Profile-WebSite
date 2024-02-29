@@ -50,13 +50,24 @@ class MobileFlutterProjectsPage extends HookWidget {
           ),
           const ProjectDescriptionWidget(
               title: "アーキテクチャ", description: "・MVVM"),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 12),
+            child: ProjectDescriptionWidget(
+                title: "使用したパッケージ",
+                description:
+                    "・Riverpod, Hooks, Freezed, cached_network_image など\n＊詳しくはGitHubをご覧ください。"),
+          ),
+          const ProjectDescriptionWidget(
+              title: "バックエンド機能一覧",
+              description:
+                  "・ユーザー認証\n・プロフィール（名前、プロフィール画像など）の編集\n・投稿（動画、テキスト）\n・投稿へのいいね、コメント\n・フォロー\n・通知\n・ユーザー検索\n＊詳しくはYoutubeやGitHubをご覧ください。"),
           const SizedBox(
-            height: 8,
+            height: 12,
           ),
           const ProjectDescriptionWidget(
               title: "技術面",
               description:
-                  "・ユーザーセッション情報などシングルトン化したクラスで管理する。これにより、アプリ全体で整合性の高いデータを使用することができる。\n・取得したデータをアプリ側の配列に格納し操作することで、Firebaseの呼び出し回数を減らし、コストを節約する。\n・動的なデータをViewModelで管理するため、ViewやServiceクラスの拡張性が上がる。\n・重複せず最適化されたデータベース構成を実現。(ER図は、Github Readmeを参照)"),
+                  "・Firebaseに保存した投稿データ (画像) をRiverpodで取得、監視する。\n・取得したデータをアプリ側の配列に格納し操作することで、Firebaseの呼び出し回数を減らし、コストを節約する。\n・重複せず最適化されたデータベース構成を実現。(ER図は、Github Readmeを参照)\n・キャッシュを使用することでサーバーの負担を軽減、レイテンシーの低下を実装。"),
           buildDivider(),
           Image.asset(
             "assets/projects/flutter_tiktok.png",
@@ -88,13 +99,24 @@ class MobileFlutterProjectsPage extends HookWidget {
           ),
           const ProjectDescriptionWidget(
               title: "アーキテクチャ", description: "・MVVM"),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 12),
+            child: ProjectDescriptionWidget(
+                title: "使用したパッケージ",
+                description:
+                    "・Riverpod, Hooks, Freezed など\n＊詳しくはGitHubをご覧ください。"),
+          ),
+          const ProjectDescriptionWidget(
+              title: "バックエンド機能一覧",
+              description:
+                  "・ユーザー認証\n・プロフィール（名前、プロフィール画像など）の編集\n・投稿（画像、テキスト）\n・投稿へのいいね、コメント\n・フォロー\n・ユーザー検索\n＊詳しくはYoutubeやGitHubをご覧ください。"),
           const SizedBox(
-            height: 8,
+            height: 12,
           ),
           const ProjectDescriptionWidget(
               title: "技術面",
               description:
-                  "・ユーザーセッション情報などシングルトン化したクラスで管理する。これにより、アプリ全体で整合性の高いデータを使用することができる。\n・取得したデータをアプリ側の配列に格納し操作することで、Firebaseの呼び出し回数を減らし、コストを節約する。\n・動的なデータをViewModelで管理するため、ViewやServiceクラスの拡張性が上がる。\n・重複せず最適化されたデータベース構成を実現。(ER図は、Github Readmeを参照)"),
+                  "・Firebaseに保存した投稿データ (動画) をRiverpodで取得、監視する。\n・取得したデータをアプリ側の配列に格納し操作することで、Firebaseの呼び出し回数を減らし、コストを節約する。\n・重複せず最適化されたデータベース構成を実現。(ER図は、Github Readmeを参照)\n・キャッシュを使用することでサーバーの負担を軽減、レイテンシーの低下を実装。"),
           buildDivider(),
           Image.asset(
             "assets/projects/flutter_translate.png",

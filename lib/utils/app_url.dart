@@ -104,10 +104,20 @@ Future<void> Github_Swift_ThreadURL() async =>
         ? await launchUrl(github_swift_thread)
         : throw 'Could not launchUrl $github_swift_thread';
 
+Future<void> Github_Swift_MessangerURL() async =>
+    await canLaunchUrl(github_swift_messanger)
+        ? await launchUrl(github_swift_messanger)
+        : throw 'Could not launchUrl $github_swift_messanger';
+
 Future<void> Github_Swift_AirbnbURL() async =>
     await canLaunchUrl(github_swift_airbnb)
         ? await launchUrl(github_swift_airbnb)
         : throw 'Could not launchUrl $github_swift_airbnb';
+
+Future<void> Github_Swift_CryptoURL() async =>
+    await canLaunchUrl(github_swift_crypto)
+        ? await launchUrl(github_swift_crypto)
+        : throw 'Could not launchUrl $github_swift_crypto';
 
 // Youtube App----------------------------------------------------------------
 Future<void> Youtube_URL() async =>
@@ -146,3 +156,8 @@ Future<void> Youtube_Swift_AirbnbURL() async =>
     await canLaunchUrl(youtube_swift_airbnb)
         ? await launchUrl(youtube_swift_airbnb)
         : throw 'Could not launchUrl $youtube_swift_airbnb';
+
+Future<void> Youtube_Swift_CryptoURL() async =>
+    await canLaunchUrl(youtube_swift_crypto)
+        ? await launchUrl(youtube_swift_crypto)
+        : throw 'Could not launchUrl $youtube_swift_crypto';
