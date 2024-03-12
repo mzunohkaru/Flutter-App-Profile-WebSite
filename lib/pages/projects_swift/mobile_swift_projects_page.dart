@@ -58,7 +58,7 @@ class MobileSwiftProjectsPage extends StatelessWidget {
           const ProjectDescriptionWidget(
               title: "技術面",
               description:
-                  "・ユーザーセッション情報などシングルトン化したクラスで管理する。これにより、アプリ全体で整合性の高いデータを使用することができる。\n・取得したデータをアプリ側の配列に格納し操作することで、Firebaseの呼び出し回数を減らし、コストを節約する。\n・動的なデータをViewModelで管理するため、ViewやServiceクラスの拡張性が上がる。\n・重複せず最適化されたデータベース構成を実現。(ER図は、Github Readmeを参照)"),
+                  "・ユーザーセッション情報などシングルトン化したクラスで管理する。これにより、アプリ全体で整合性の高いデータを使用することができる。\n・取得したデータをアプリ側の配列に格納し操作することで、Firebaseの呼び出し回数を減らし、コストを節約する。\n・動的なデータをViewModelで管理するため、ViewやServiceクラスの拡張性が上がる。\n・重複せず最適化されたデータベース構成を実現。(ER図は、Github Readmeをご覧ください。)"),
           buildDivider(),
           Image.asset(
             "assets/projects/swiftui_tiktok.png",
@@ -100,7 +100,7 @@ class MobileSwiftProjectsPage extends StatelessWidget {
           const ProjectDescriptionWidget(
               title: "技術面",
               description:
-                  "・ユーザーセッション情報などシングルトン化したクラスで管理する。これにより、アプリ全体で整合性の高いデータを使用することができる。\n・取得したデータをアプリ側の配列に格納し操作することで、Firebaseの呼び出し回数を減らし、コストを節約する。\n・動的なデータをViewModelで管理するため、ViewやServiceクラスの拡張性が上がる。\n・重複せず最適化されたデータベース構成を実現。(ER図は、Github Readmeを参照)"),
+                  "・ユーザーセッション情報などシングルトン化したクラスで管理する。これにより、アプリ全体で整合性の高いデータを使用することができる。\n・取得したデータをアプリ側の配列に格納し操作することで、Firebaseの呼び出し回数を減らし、コストを節約する。\n・動的なデータをViewModelで管理するため、ViewやServiceクラスの拡張性が上がる。\n・重複せず最適化されたデータベース構成を実現。(ER図は、Github Readmeをご覧ください。)"),
           buildDivider(),
           Image.asset(
             "assets/projects/swiftui_threads.png",
@@ -142,7 +142,7 @@ class MobileSwiftProjectsPage extends StatelessWidget {
           const ProjectDescriptionWidget(
               title: "技術面",
               description:
-                  "・ユーザーセッション情報などシングルトン化したクラスで管理する。これにより、アプリ全体で整合性の高いデータを使用することができる。\n・取得したデータをアプリ側の配列に格納し操作することで、Firebaseの呼び出し回数を減らし、コストを節約する。\n・動的なデータをViewModelで管理するため、ViewやServiceクラスの拡張性が上がる。\n・重複せず最適化されたデータベース構成を実現。(ER図は、Github Readmeを参照)"),
+                  "・ユーザーセッション情報などシングルトン化したクラスで管理する。これにより、アプリ全体で整合性の高いデータを使用することができる。\n・取得したデータをアプリ側の配列に格納し操作することで、Firebaseの呼び出し回数を減らし、コストを節約する。\n・動的なデータをViewModelで管理するため、ViewやServiceクラスの拡張性が上がる。\n・重複せず最適化されたデータベース構成を実現。(ER図は、Github Readmeをご覧ください。)"),
           buildDivider(),
           Image.asset(
             "assets/projects/swiftui_messanger.png",
@@ -210,7 +210,7 @@ class MobileSwiftProjectsPage extends StatelessWidget {
           const ProjectDescriptionWidget(
               title: "技術面",
               description:
-                  "・豊富なアニメーションによるUIUXを構築。\n・データを格納した配列をコピーし操作することにより、高速な検索機能を提供。\n・動的なデータをViewModelで管理するため、ViewやServiceクラスの拡張性が上がる。\n・重複せず最適化されたデータベース構成を実現。(ER図は、Github Readmeを参照)"),
+                  "・豊富なアニメーションによるUIUXを構築。\n・データを格納した配列をコピーし操作することにより、高速な検索機能を提供。\n・動的なデータをViewModelで管理するため、ViewやServiceクラスの拡張性が上がる。\n・重複せず最適化されたデータベース構成を実現。(ER図は、Github Readmeをご覧ください。)"),
           buildDivider(),
           Image.asset(
             "assets/projects/swiftui_crypto.png",

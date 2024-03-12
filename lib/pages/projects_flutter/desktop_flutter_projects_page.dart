@@ -48,7 +48,7 @@ class DesktopFlutterProjectsPage extends HookWidget {
           const ProjectDescriptionWidget(
               title: "技術面",
               description:
-                  "・Firebaseに保存した投稿データ (動画) をRiverpodで取得、監視する。\n・取得したデータをアプリ側の配列に格納し操作することで、Firebaseの呼び出し回数を減らし、コストを節約する。\n・重複せず最適化されたデータベース構成を実現。(ER図は、Github Readmeを参照)\n・キャッシュを使用することでサーバーの負担を軽減、レイテンシーの低下を実装。"),
+                  "・Firebaseに保存した投稿データ (動画) をRiverpodで取得、監視する。\n・取得したデータをアプリ側の配列に格納し操作することで、Firebaseの呼び出し回数を減らし、コストを節約する。\n・重複せず最適化されたデータベース構成を実現。(ER図は、Github Readmeをご覧ください。)\n・キャッシュを使用することでサーバーの負担を軽減、レイテンシーの低下を実装。"),
           buildDivider(),
           GithubCardWidget(
               deviceHeight: deviceHeight,
@@ -74,7 +74,7 @@ class DesktopFlutterProjectsPage extends HookWidget {
           const ProjectDescriptionWidget(
               title: "技術面",
               description:
-                  "・Firebaseに保存した投稿データ (画像) をRiverpodで取得、監視する。\n・取得したデータをアプリ側の配列に格納し操作することで、Firebaseの呼び出し回数を減らし、コストを節約する。\n・重複せず最適化されたデータベース構成を実現。(ER図は、Github Readmeを参照)\n・キャッシュを使用することでサーバーの負担を軽減、レイテンシーの低下を実装。"),
+                  "・Firebaseに保存した投稿データ (画像) をRiverpodで取得、監視する。\n・取得したデータをアプリ側の配列に格納し操作することで、Firebaseの呼び出し回数を減らし、コストを節約する。\n・重複せず最適化されたデータベース構成を実現。(ER図は、Github Readmeをご覧ください。)\n・キャッシュを使用することでサーバーの負担を軽減、レイテンシーの低下を実装。"),
           buildDivider(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

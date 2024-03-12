@@ -37,7 +37,7 @@ Uri github_swift_crypto =
 // Youtube URL----------------------------------------------------------------
 Uri youtube = Uri.parse("https://www.youtube.com/@hikaru-mizuno/videos");
 Uri youtube_flutter_tiktok =
-    Uri.parse("https://www.youtube.com/watch?v=CIdJKaieUGo");
+    Uri.parse("https://www.youtube.com/watch?v=qSolIJKl99g");
 Uri youtube_flutter_instagram =
     Uri.parse("https://www.youtube.com/watch?v=FPwIqQolRTM");
 Uri youtube_swift_tiktok =
