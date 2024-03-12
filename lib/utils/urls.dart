@@ -34,6 +34,13 @@ Uri github_swift_airbnb =
 Uri github_swift_crypto =
     Uri.parse("https://github.com/mzunohkaru/SwiftUI-Sample-API");
 
+// AWS DynamoDB
+Uri github_aws_dynamodb =
+    Uri.parse("https://github.com/mzunohkaru/AWS-Sample-Lambda-API/tree/main/func_9");
+// AWS RDS
+Uri github_aws_rds =
+    Uri.parse("https://github.com/mzunohkaru/AWS-Sample-Lambda-API");
+
 // Youtube URL----------------------------------------------------------------
 Uri youtube = Uri.parse("https://www.youtube.com/@hikaru-mizuno/videos");
 Uri youtube_flutter_tiktok =

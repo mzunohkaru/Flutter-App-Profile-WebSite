@@ -18,6 +18,7 @@ class ProjectDescriptionWidget extends HookWidget {
         Text(
           description,
           style: kDesktopSubTitleTextStyle,
+          overflow: TextOverflow.visible,
         ),
       ],
     );

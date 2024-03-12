@@ -119,6 +119,18 @@ Future<void> Github_Swift_CryptoURL() async =>
         ? await launchUrl(github_swift_crypto)
         : throw 'Could not launchUrl $github_swift_crypto';
 
+// AWS
+Future<void> Github_AWS_DynamoDBURL() async =>
+    await canLaunchUrl(github_aws_dynamodb)
+        ? await launchUrl(github_aws_dynamodb)
+        : throw 'Could not launchUrl $github_aws_dynamodb';
+
+Future<void> Github_AWS_RDSURL() async =>
+    await canLaunchUrl(github_aws_rds)
+        ? await launchUrl(github_aws_rds)
+        : throw 'Could not launchUrl $github_aws_rds';
+
+
 // Youtube App----------------------------------------------------------------
 Future<void> Youtube_URL() async =>
     await canLaunchUrl(youtube)

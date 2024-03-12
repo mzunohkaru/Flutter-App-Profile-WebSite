@@ -5,6 +5,7 @@ import 'package:flutter_profile_web/pages/policys/desktop_policy_page.dart';
 import 'package:flutter_profile_web/pages/policys/mobile_policy_page.dart';
 import 'package:flutter_profile_web/pages/products/desktop_products_page.dart';
 import 'package:flutter_profile_web/pages/products/mobile_products_page.dart';
+import 'package:flutter_profile_web/pages/projects_aws/desktop_aws_projects_page.dart';
 import 'package:flutter_profile_web/pages/projects_aws/mobile_aws_projects_page.dart';
 import 'package:flutter_profile_web/pages/projects_flutter/desktop_flutter_projects_page.dart';
 import 'package:flutter_profile_web/pages/projects_flutter/mobile_flutter_projects_page.dart';
@@ -174,7 +175,7 @@ class _SideMenuBodyWidgetState extends State<SideMenuBodyWidget> {
           case 3:
             return widget.mobile
                 ? const MobileAwsProjectsPage()
-                : DesktopSwiftProjectsPage(deviceHeight: deviceHeight);
+                : DesktopAwsProjectsPage(deviceHeight: deviceHeight);
           case 4:
             return widget.mobile
                 ? MobilePolicyPage(

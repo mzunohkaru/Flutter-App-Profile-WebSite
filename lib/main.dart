@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Builder(
         builder: (context) {
-          final isSmallScreen = MediaQuery.of(context).size.width < 1000;
+          final isSmallScreen = MediaQuery.of(context).size.width < 800;
           return Scaffold(
             key: _key,
             appBar: isSmallScreen

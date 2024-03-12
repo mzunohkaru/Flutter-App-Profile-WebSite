@@ -28,7 +28,7 @@ class MobileAwsProjectsPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 IconButton(
-                  onPressed: Github_Swift_InstagramURL,
+                  onPressed: Github_AWS_DynamoDBURL,
                   icon: FaIcon(
                     FontAwesomeIcons.github,
                     size: 40,
@@ -63,7 +63,7 @@ class MobileAwsProjectsPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 IconButton(
-                  onPressed: Github_Swift_TiktokURL,
+                  onPressed: Github_AWS_RDSURL,
                   icon: FaIcon(
                     FontAwesomeIcons.github,
                     size: 40,
@@ -88,7 +88,6 @@ class MobileAwsProjectsPage extends StatelessWidget {
               title: "技術面",
               description:
                   "・プライベートサブネットに配置したRDSにより、堅牢なデータベースを実現しました。\n・API Gatewayを用いて、RestAPIを開発しました。\n・API GatewayとLambdaにより、RDS（データベース）へのCRUD操作を実現しました。\n・SystemsManagerを使用し、安全に快適なデータベース操作を可能にしました。"),
-          buildDivider(),
           const SizedBox(
             height: 80,
           ),
